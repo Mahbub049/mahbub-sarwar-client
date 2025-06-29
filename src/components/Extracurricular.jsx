@@ -12,7 +12,7 @@ export default function ExtraCurricular() {
       viewport={{ once: true }}
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-700 mb-14">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-14">
           Extra-Curricular Activities
         </h2>
 
@@ -95,12 +95,11 @@ export default function ExtraCurricular() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="flex items-center gap-2 text-blue-700 font-semibold text-lg mb-2">
-              <Star size={20} /> Volunteering & Internships
+              <Star size={20} /> Volunteering
             </div>
             <ul className="list-disc list-inside ml-5 text-gray-700 text-sm">
               <li>Volunteer · 2nd Int’l ICT Conference on Sustainability (2023)</li>
               <li>Volunteer · ACC National Fest (2018)</li>
-              <li>Intern · Genuity Systems Ltd. (Dec 2022) – Developed E-Commerce system (Laravel, PHP)</li>
             </ul>
           </motion.div>
         </div>

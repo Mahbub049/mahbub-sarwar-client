@@ -17,19 +17,19 @@ const educationData = [
     title: "Higher Secondary Certificate",
     institution: "Adamjee Cantonment College",
     duration: "2017 – 2019",
-    gpa: "CGPA: 4.83",
+    gpa: "GPA: 4.83",
   },
   {
     title: "Secondary School Certificate",
     institution: "Shaheed Ramiz Uddin Cantonment School",
-    duration: "2016 – 2017",
+    duration: "2015 – 2017",
     gpa: "GPA: 5.00",
   },
 ];
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 bg-gradient-to-b from-white via-blue-50 to-white">
+    <section id="education" className="py-20 font-montserrat bg-gradient-to-b from-white via-blue-50 to-white">
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-14">
           Education

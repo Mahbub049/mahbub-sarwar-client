@@ -33,42 +33,55 @@ export default function ContactForm() {
   return (
     <motion.section
       id="contact"
-      className="w-full bg-gray-50 py-16 px-4 md:px-8 lg:px-12"
+      className="w-full bg-gradient-to-b from-blue-50 to-white py-20 px-4 md:px-8 lg:px-12"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         {/* Contact Info */}
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-gray-800">Get in Touch</h2>
-          <p className="text-gray-600">I'm available via the form or directly using the contact details below. I'll respond promptly.</p>
+          <h2 className="text-4xl font-bold">Get in Touch</h2>
+          <p className="text-gray-600 text-base">
+            Feel free to reach out via the form or directly using the contact details. I’ll respond as soon as possible.
+          </p>
 
-          <div className="space-y-4 text-gray-700">
+          <div className="space-y-4 text-gray-700 text-base">
             <div className="flex items-center gap-3">
-              <Mail className="text-violet-600" />
-              <span className="text-gray-800">mahbubsarwar49@gmail.com</span>
+              <Mail className="text-blue-600" />
+              <span className="text-gray-900">mahbubsarwar49@gmail.com</span>
             </div>
             <div className="flex items-center gap-3">
-              <Phone className="text-violet-600" />
-              <span className="text-gray-800">+8801199994083</span>
+              <Phone className="text-blue-600" />
+              <span className="text-gray-900">+8801199994083</span>
             </div>
             <div className="flex items-start gap-3">
-              <MapPin className="text-violet-600 mt-1" />
-              <span className="text-gray-800">House-80, Road-06, Block-A, Pallabi, Dhaka-1216</span>
+              <MapPin className="text-blue-600 mt-1" />
+              <span className="text-gray-900 leading-snug">
+                House-80, Road-06, Block-A, Pallabi, Dhaka-1216
+              </span>
             </div>
           </div>
 
-          <div className="flex gap-5 pt-2">
-            <a href="https://www.linkedin.com/in/mahbub049" target="_blank" className="text-blue-600 hover:underline flex items-center gap-2">
+          <div className="flex gap-5 pt-4">
+            <a
+              href="https://www.linkedin.com/in/mahbub049"
+              target="_blank"
+              className="text-blue-600 hover:underline flex items-center gap-2"
+            >
               <Linkedin size={18} /> LinkedIn
             </a>
-            <a href="mailto:mahbubsarwar49@gmail.com" className="text-green-600 hover:underline">Email Me</a>
+            <a
+              href="mailto:mahbubsarwar49@gmail.com"
+              className="text-green-600 hover:underline"
+            >
+              Email Me
+            </a>
           </div>
         </div>
 
         {/* Form */}
-        <div className="bg-white shadow-xl rounded-2xl p-8">
+        <div className="bg-white shadow-lg rounded-2xl p-8">
           <form onSubmit={handleSubmit} className="space-y-5">
             <input
               type="text"
@@ -77,7 +90,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Your Name"
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
               type="email"
@@ -86,7 +99,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Your Email"
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
               type="text"
@@ -95,7 +108,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Subject"
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <textarea
               name="message"
@@ -104,22 +117,25 @@ export default function ContactForm() {
               placeholder="Your Message"
               rows="5"
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
-            <button
+
+            <motion.button
               type="submit"
-              className="w-full bg-violet-600 text-white py-3 rounded-lg hover:bg-violet-700 transition"
+              whileTap={{ scale: 0.95 }}
+              className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition"
             >
               Submit
-            </button>
+            </motion.button>
+
             {status === "success" && (
               <p className="text-green-600 text-sm mt-2 text-center">
-                Submitted and emailed successfully
+                Message sent successfully!
               </p>
             )}
             {status === "error" && (
               <p className="text-red-600 text-sm mt-2 text-center">
-                Something went wrong. Please try again.
+                Something went wrong. Please try again later.
               </p>
             )}
           </form>
