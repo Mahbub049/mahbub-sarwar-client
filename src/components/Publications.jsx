@@ -24,7 +24,7 @@ const publications = [
 
 export default function Publications() {
   return (
-    <section id="publications" className="py-20 bg-gradient-to-b from-blue-50 to-white px-4">
+    <section id="publications" className="py-20 font-montserrat bg-gradient-to-b from-blue-50 to-white px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-14"> Publications</h2>
         

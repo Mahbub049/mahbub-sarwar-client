@@ -8,10 +8,12 @@ import Publications from './components/Publications';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import ExtraCurricular from './components/Extracurricular';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="font-sans">
+      <Navbar/>
       <Hero />
       <Education />
       <Experience />

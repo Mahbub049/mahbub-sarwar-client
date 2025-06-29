@@ -32,7 +32,7 @@ const achievements = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <section id="achievements" className="py-20 font-montserrat bg-gradient-to-b from-blue-50 to-white">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-14">
            Achievements

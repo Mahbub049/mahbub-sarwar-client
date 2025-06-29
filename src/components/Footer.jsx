@@ -2,7 +2,7 @@ import { Linkedin, Github, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-950 text-blue-100 py-8 px-4 mt-20">
+    <footer className="bg-blue-950 font-montserrat text-blue-100 py-8 px-4 mt-20">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <p className="text-sm text-center md:text-left">
           © 2025 <span className="font-semibold text-blue-200">Mahbub Sarwar</span>. All rights reserved.

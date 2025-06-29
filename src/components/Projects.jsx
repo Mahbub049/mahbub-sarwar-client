@@ -61,7 +61,7 @@ export default function Projects() {
   const visibleProjects = showAll ? allProjects : allProjects.slice(0, 4);
 
   return (
-    <section id="projects" className="bg-white py-20 px-4 md:px-6 lg:px-10">
+    <section id="projects" className="bg-white font-montserrat py-20 px-4 md:px-6 lg:px-10">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-14">Projects</h2>
 
