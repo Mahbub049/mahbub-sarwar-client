@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000", // Replace with your backend API base URL
+  baseURL: "https://mahbub-sarwar-server.onrender.com", // Replace with your backend API base URL
 });
 
 export default instance;
