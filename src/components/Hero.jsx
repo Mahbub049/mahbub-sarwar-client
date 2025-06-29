@@ -8,7 +8,7 @@ import { FaDownload, FaPaperPlane } from 'react-icons/fa';
 export default function Hero() {
     return (
         <section
-            className="min-h-screen font-montserrat bg-gradient-to-b from-white via-blue-50 to-white flex items-center justify-center px-6 pt-28 pb-16"
+            className="min-h-screen font-montserrat flex items-center justify-center px-6 pt-28 pb-16"
             id="hero"
         >
             <div className="w-full max-w-7xl flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center">
@@ -19,7 +19,7 @@ export default function Hero() {
                     transition={{ duration: 0.8 }}
                     className="space-y-6 text-center md:text-left"
                 >
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-700 leading-snug tracking-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-400 leading-snug tracking-tight">
                         <Typewriter
                             words={['Muhammad Mahbub Sarwar Shafi']}
                             loop={false}
@@ -31,16 +31,16 @@ export default function Hero() {
                         />
                     </h1>
 
-                    <p className="text-lg sm:text-xl font-semibold text-blue-700">
+                    <p className="text-lg sm:text-xl font-semibold text-blue-700 dark:text-blue-400">
                         Lecturer | Full Stack Web Developer
                     </p>
 
-                    <p className="text-gray-600 text-sm sm:text-base md:text-lg text-justify max-w-xl mx-auto md:mx-0">
+                    <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base md:text-lg text-justify max-w-xl mx-auto md:mx-0">
                         Dedicated teaching enthusiast with a strong academic background and practical exposure to modern web technologies. With experience as a Teaching Assistant and a Full Stack Web Development intern, I’ve actively contributed to academic growth and real-world tech solutions. Passionate about mentoring students, leading tech initiatives, and building impactful web applications that bridge theory and practice.
                     </p>
 
                     {/* 🔗 Social Links */}
-                    <div className="flex justify-center md:justify-start gap-5 text-xl text-blue-600">
+                    <div className="flex justify-center md:justify-start gap-5 text-xl text-blue-600 dark:text-blue-400">
                         <a href="mailto:mahbubsarwar5@gmail.com" aria-label="Email" className="hover:scale-110 transition-transform"><FaEnvelope /></a>
                         <a href="tel:+8801999949083" aria-label="Phone" className="hover:scale-110 transition-transform"><FaPhone /></a>
                         <a href="https://www.linkedin.com/in/mahbubsarwar49" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:scale-110 transition-transform"><FaLinkedin /></a>
@@ -60,13 +60,14 @@ export default function Hero() {
 
                         <a
                             href="#contact"
-                            className="px-6 py-2 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-100 transition duration-300 shadow-sm flex items-center gap-2 justify-center"
+                            className="px-6 py-2 border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900 transition duration-300 shadow-sm flex items-center gap-2 justify-center"
                         >
                             <FaPaperPlane />
                             <span>Contact Me</span>
                         </a>
                     </div>
                 </motion.div>
+
 
                 {/* 🖼️ Profile Image */}
                 <motion.div

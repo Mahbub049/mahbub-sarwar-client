@@ -32,9 +32,9 @@ const tools = [
 
 export default function Skills() {
   return (
-    <section className="py-16 font-montserrat bg-gray-50" id="skills">
+    <section className="py-16 font-montserrat" id="skills">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-14">Skills & Tools</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">Skills & Tools</h2>
 
         {/* Developer Skills */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-12">

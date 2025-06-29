@@ -1,3 +1,6 @@
+// src/App.jsx
+
+import { useState, useEffect } from "react";
 import Hero from './components/Hero';
 import Education from './components/Education';
 import Experience from './components/Experience';
@@ -10,10 +13,25 @@ import Footer from './components/Footer';
 import ExtraCurricular from './components/Extracurricular';
 import Navbar from './components/Navbar';
 
-function App() {
+export default function App() {
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved ? saved === "dark" : true; // default to dark
+  });
+
+  // Apply or remove the dark class
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
   return (
-    <div className="font-sans">
-      <Navbar/>
+    <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white min-h-screen transition-colors duration-500 font-montserrat">
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
       <Education />
       <Experience />
@@ -23,9 +41,7 @@ function App() {
       <Achievements />
       <Publications />
       <ContactForm />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
-
-export default App;
