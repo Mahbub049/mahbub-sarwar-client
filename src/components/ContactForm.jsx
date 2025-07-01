@@ -49,11 +49,11 @@ export default function ContactForm() {
                     <div className="space-y-4 text-gray-700 dark:text-gray-200 text-base">
                         <div className="flex items-center gap-3">
                             <Mail className="text-blue-600" />
-                            <span>mahbubsarwar49@gmail.com</span>
+                            <span>mahbubsarwar5@gmail.com</span>
                         </div>
                         <div className="flex items-center gap-3">
                             <Phone className="text-blue-600" />
-                            <span>+8801199994083</span>
+                            <span>+8801999949083</span>
                         </div>
                         <div className="flex items-start gap-3">
                             <MapPin className="text-blue-600 mt-1" />
