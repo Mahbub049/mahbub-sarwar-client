@@ -9,6 +9,15 @@ import project04 from '../assets/project-images/project03.png';
 import project05 from '../assets/project-images/project04.png';
 
 const allProjects = [
+        {
+        title: "Class Routine Management System",
+        image: project06,
+        description: "This class routine management website offers a complete solution for academic scheduling through an integrated admin panel and a responsive public view. Designed for educational institutions, it enables seamless creation, management, and display of class routines with real-time updates. The admin panel allows authorized personnel to add, edit, or delete routines, manage faculty details, course information, and site settings—ensuring accurate and conflict-free scheduling. The public interface presents a clean, searchable, and printable routine view accessible to students and faculty. Built with React.js, Tailwind CSS, and backed by a robust Node.js/Express and MongoDB backend, it guarantees high performance, user-friendliness, and cross-device compatibility. The platform enhances academic transparency, reduces manual workload, and improves communication by providing an intuitive and accessible class routine management experience.",
+        tech: ["React", "Tailwind", "MongoDB", "Express", "Node", "JWT" ],
+        live: "https://ictroutine.vercel.app/",
+        client: "https://github.com/Mahbub049/Routine-Management-Client.git",
+        server: "https://github.com/Mahbub049/Routine-Management-Server.git"
+    },
     {
         title: "Professional Personal Faculty Website",
         image: project01,
