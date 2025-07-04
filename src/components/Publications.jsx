@@ -3,20 +3,20 @@ import { FaFileAlt } from 'react-icons/fa';
 
 const publications = [
     {
-        title: 'BERT-based Sentiment Analysis of Depression Posts with LIME-based Interpretability',
-        journal: 'Submitted to: Journal of Computational Psychiatry',
-        year: 2025,
-        status: 'Submitted'
-    },
-    {
-        title: 'Explainable Brain Tumor Classification using Ensemble Deep Learning and XAI',
-        journal: 'Accepted in: BUP Journal Volume 3, Issue-01',
+        title: 'An Explainable Ensemble Learning Framework for Brain Tumor Classification Using Pretrained Models and XAI Techniques',
+        journal: 'Accepted in: Journal of FST Volume 3, Issue-01',
         year: 2025,
         status: 'Accepted'
     },
     {
-        title: 'Survey on Explainable AI Techniques in Medical Imaging',
-        journal: 'Under Review: Asian Journal of Computer Science',
+        title: 'Sentiment Classification in Movie Reviews Through a Comparative Analysis of Machine Learning Models',
+        journal: 'Accepted in: Journal of FST Volume 3, Issue-01',
+        year: 2025,
+        status: 'Accepted'
+    },
+    {
+        title: 'Advanced Brain Tumor Classification and Segmentation with an Enhanced Weighted Ensemble of CNN Models and UNet Architecture',
+        journal: 'Under Review',
         year: 2025,
         status: 'Under Review'
     }
