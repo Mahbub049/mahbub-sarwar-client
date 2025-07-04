@@ -7,6 +7,7 @@ import project02 from '../assets/project-images/project01.png';
 import project03 from '../assets/project-images/project02.png';
 import project04 from '../assets/project-images/project03.png';
 import project05 from '../assets/project-images/project04.png';
+import project06 from '../assets/project-images/project06.png';
 
 const allProjects = [
         {
