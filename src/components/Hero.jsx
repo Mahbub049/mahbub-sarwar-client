@@ -37,6 +37,9 @@ export default function Hero() {
 
                     <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base md:text-lg text-justify max-w-xl mx-auto md:mx-0">
                         Dedicated teaching enthusiast with a strong academic background and practical exposure to modern web technologies. With experience as a Teaching Assistant and a Full Stack Web Development intern, I’ve actively contributed to academic growth and real-world tech solutions. Passionate about mentoring students, leading tech initiatives, and building impactful web applications that bridge theory and practice.
+
+                        {/* Dedicated teaching professional with a solid academic background and practical experience in modern web technologies. Currently working as a Lecturer in Computer Science and Engineering at BUBT, with previous roles as a Teaching Assistant and Full Stack Web Development intern. Focused on effective student guidance, contributing to academic and technical initiatives, and developing web applications that integrate theoretical knowledge with real-world use. Also interested in conducting research in areas related to computing and emerging technologies. */}
+
                     </p>
 
                     {/* 🔗 Social Links */}

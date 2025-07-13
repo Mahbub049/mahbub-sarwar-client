@@ -9,11 +9,12 @@ import project04 from '../assets/project-images/project03.png';
 import project05 from '../assets/project-images/project04.png';
 import project06 from '../assets/project-images/project06.png';
 
+// DESCRIPTION IN 60 WORDS ALWAYS
 const allProjects = [
         {
         title: "Class Routine Management System",
         image: project06,
-        description: "This class routine management website offers a complete solution for academic scheduling through an integrated admin panel and a responsive public view. Designed for educational institutions, it enables seamless creation, management, and display of class routines with real-time updates. The admin panel allows authorized personnel to add, edit, or delete routines, manage faculty details, course information, and site settings—ensuring accurate and conflict-free scheduling. The public interface presents a clean, searchable, and printable routine view accessible to students and faculty. Built with React.js, Tailwind CSS, and backed by a robust Node.js/Express and MongoDB backend, it guarantees high performance, user-friendliness, and cross-device compatibility. The platform enhances academic transparency, reduces manual workload, and improves communication by providing an intuitive and accessible class routine management experience.",
+        description: "This class routine management system streamlines academic scheduling with an admin panel for managing routines, faculty, and courses, and a public view for students and staff. Built with React, Tailwind CSS, Node.js, and MongoDB, it ensures real-time updates, conflict-free scheduling, and responsive design. It improves transparency, reduces manual tasks, and offers a clean, printable routine interface.",
         tech: ["React", "Tailwind", "MongoDB", "Express", "Node", "JWT" ],
         live: "https://ictroutine.vercel.app/",
         client: "https://github.com/Mahbub049/Routine-Management-Client.git",
@@ -22,14 +23,14 @@ const allProjects = [
     {
         title: "Professional Personal Faculty Website",
         image: project01,
-        description: "This professional portfolio website is designed to represent a faculty member’s academic and research credentials in a structured and elegant way. It showcases academic achievements, research publications, teaching experiences, and educational background, all organized in a clean, responsive layout. Built with React and Tailwind CSS, it ensures cross-device compatibility and fast navigation. The site features easily accessible contact options, a well-structured UI, and clearly categorized sections. It improves professional visibility, encourages academic networking, and offers a user-friendly experience for students, collaborators, or institutions seeking information about the faculty member.",
+        description: "This professional portfolio website showcases a faculty member’s academic credentials, research, and teaching experience in a clean, responsive layout. Built with React and Tailwind CSS, it ensures fast navigation and cross-device compatibility. With organized sections and accessible contact options, it enhances professional visibility, supports academic networking, and offers an intuitive experience for students and collaborators.",
         tech: ["React", "Tailwind", "Framer Motion"],
         live: "https://nasiruddin.vercel.app/",
     },
     {
         title: "HostelMania - Hostel Management System",
         image: project02,
-        description: "HostelMania is a comprehensive web-based meal management system crafted for student hostels. It offers an efficient, intuitive platform where students can select meals, track orders, and submit feedback, while hostel admins manage inventory, menus, and user engagement. The system supports dynamic meal scheduling, rating systems, and reviews to encourage participation. Built with Firebase and React, it ensures real-time updates, secure access, and mobile responsiveness. With a focus on simplicity, performance, and clarity, HostelMania improves user satisfaction and streamlines meal operations in hostel environments through a responsive, modern user interface.",
+        description: "HostelMania is a web-based meal management system for student hostels, enabling students to choose meals, track orders, and give feedback. Admins manage menus, inventory, and engagement. Built with React and Firebase, it ensures real-time updates, security, and mobile responsiveness. With dynamic scheduling and reviews, it streamlines hostel meal operations and enhances user satisfaction through a modern, intuitive interface.",
         tech: ["React", "Tailwind", "Firebase", "MongoDB"],
         live: "https://hostelmaniabd.web.app/",
         client: "https://github.com/yourrepo2-client",
@@ -38,7 +39,7 @@ const allProjects = [
     {
         title: "TrioEats – Food Ordering",
         image: project03,
-        description: "TrioEats is a comprehensive restaurant management website designed to provide users with an exceptional dining experience through a modern, user-friendly platform. It allows customers to explore top-selling products, reserve seats, contact the restaurant, and view the exact location on an interactive map, ensuring both convenience and clarity. From extensive menu displays and categorized food listings to effortless ordering processes and interactive image galleries, TrioEats streamlines restaurant operations. With responsive design, smooth navigation, and real-time updates, it enhances customer satisfaction and supports restaurant staff.",
+        description: "TrioEats is a restaurant management website offering a seamless dining experience. Customers can explore top dishes, reserve seats, contact the restaurant, and view its location via an interactive map. Featuring categorized menus, image galleries, and real-time updates, it streamlines ordering and boosts staff efficiency. Its responsive, user-friendly design ensures smooth navigation and enhances overall customer satisfaction.",
         tech: ["React", "Tailwind", "Firebase"],
         live: "https://trioeats-8ebfe.web.app/",
         client: "https://github.com/yourrepo3-client",
@@ -47,7 +48,7 @@ const allProjects = [
     {
         title: "WanderSea – Tour Booking",
         image: project04,
-        description: "WanderSEA is a feature-rich tourism management platform highlighting the beauty and culture of Southeast Asia. It enables users to add, update, and delete tourist spots, while allowing general visitors to freely explore destinations without requiring login. Designed with modern technologies like React, Node.js, and MongoDB, WanderSEA ensures seamless trip planning, dynamic content handling, and a smooth browsing experience. The platform emphasizes user convenience, showcasing key tourist information with an intuitive layout, responsive interface, and fast performance for both contributors and casual explorers seeking reliable travel resources.",
+        description: "WanderSEA is a tourism management platform showcasing Southeast Asia’s beauty and culture. Users can add, update, or delete tourist spots, while visitors explore destinations without login. Built with React, Node.js, and MongoDB, it ensures smooth trip planning, dynamic content, and fast performance. Its intuitive layout and responsive design enhance convenience for both contributors and travel enthusiasts.",
         tech: ["React", "Tailwind", "Firebase"],
         live: "https://wandersea-d210a.web.app/",
         client: "https://github.com/yourrepo4-client",
@@ -56,7 +57,7 @@ const allProjects = [
     {
         title: "Radiant Residences",
         image: project05,
-        description: "Radiant Residences is a luxury accommodation platform offering an elegant selection of curated properties for high-end travelers. Each listing is handpicked to reflect superior quality, comfort, and style in the world’s most desirable destinations. The site provides rich media galleries, detailed amenities, and real-time availability to support easy trip planning. With a strong commitment to excellence and hospitality, Radiant Residences ensures a seamless experience from browsing to booking. Its responsive design, refined layout, and engaging content create a memorable and visually appealing journey for luxury-seeking guests around the globe.",
+        description: "Radiant Residences is a luxury accommodation platform featuring curated, high-end properties in top global destinations. Each listing highlights superior comfort, style, and amenities with rich media and real-time availability. Designed for seamless trip planning, the site offers a refined, responsive layout that ensures an elegant browsing and booking experience for discerning travelers seeking exceptional stays.",
         tech: ["React", "Tailwind", "Firebase"],
         live: "https://radiant-residences.web.app/",
         client: "https://github.com/Mahbub049/Radiant-Residences",

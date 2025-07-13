@@ -1,10 +1,21 @@
 import { motion } from 'framer-motion';
 
 const experienceData = [
+    // {
+    //     title: "Lecturer",
+    //     company: "Dept. of CSE, BUBT",
+    //     duration: "Jul 2025 - Present",
+    //     responsibilities: [
+    //         'Developed and delivered comprehensive lectures, tutorials, and lab sessions for undergraduate courses.',
+    //         'Designed course outlines and instructional materials aligned with the academic curriculum and learning outcomes.',
+    //         'Conducted research activities and collaborated on departmental projects to promote academic growth.',
+    //         'Engaged in continuous curriculum improvement by incorporating feedback and latest industry trends.'
+    //     ]
+    // },
     {
         title: "Teaching Assistant",
         company: "Dept. of ICT, FST, BUP",
-        duration: "Aug 2024 – Present",
+        duration: "Aug 2024 – Jun 2025",
         responsibilities: [
             "Assisted course instructors in delivering lectures and managing class materials.",
             'Participated in assessment tasks including paper scrutiny, result entry, and preparing question sets.',
