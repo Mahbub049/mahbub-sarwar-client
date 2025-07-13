@@ -32,7 +32,8 @@ export default function Hero() {
                     </h1>
 
                     <p className="text-lg sm:text-xl font-semibold text-blue-700 dark:text-blue-400">
-                        Lecturer | Full Stack Web Developer
+                        {/* Lecturer | Full Stack Web Developer */}
+                        Full Stack Web Developer
                     </p>
 
                     <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base md:text-lg text-justify max-w-xl mx-auto md:mx-0">
