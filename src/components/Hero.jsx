@@ -49,7 +49,7 @@ export default function Hero() {
                     </div>
 
                     {/* 📎 Buttons */}
-                    <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    {/* <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <a
                             href="/Mahbub-CV.pdf"
                             download
@@ -66,7 +66,7 @@ export default function Hero() {
                             <FaPaperPlane />
                             <span>Contact Me</span>
                         </a>
-                    </div>
+                    </div> */}
                 </motion.div>
 
 
