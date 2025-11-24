@@ -12,6 +12,8 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import ExtraCurricular from './components/Extracurricular';
 import Navbar from './components/Navbar';
+import Teaching from './components/Teaching';
+
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -35,6 +37,7 @@ export default function App() {
       <Hero />
       <Education />
       <Experience />
+      <Teaching />
       <ExtraCurricular />
       <Skills />
       <Projects />

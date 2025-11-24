@@ -8,6 +8,7 @@ const links = [
     { name: "Home", href: "#hero" },
     { name: "Education", href: "#education" },
     { name: "Experience", href: "#experience" },
+    { name: "Teaching", href: "#teaching" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
     { name: "Achievements", href: "#achievements" },
