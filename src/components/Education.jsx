@@ -29,8 +29,8 @@ const educationData = [
 
 export default function Education() {
     return (
-        <section id="education" className="py-20 font-montserrat">
-            <div className="max-w-5xl mx-auto px-4">
+        <section id="education" className="py-20 font-montserrat px-4 md:px-6">
+            <div className="section-shell max-w-5xl px-6 py-10 md:p-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
                     Education
                 </h2>

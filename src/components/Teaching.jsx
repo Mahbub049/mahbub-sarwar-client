@@ -10,8 +10,8 @@ const totalStudents = teachingData.reduce((sum, item) => sum + item.students, 0)
 
 export default function Teaching() {
     return (
-        <section id="teaching" className="py-20 font-montserrat">
-            <div className="max-w-6xl mx-auto px-4">
+        <section id="teaching" className="py-20 font-montserrat px-4 md:px-6">
+            <div className="section-shell max-w-6xl mx-auto px-6 py-10 md:p-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-3">
                     Teaching Portfolio
                 </h2>

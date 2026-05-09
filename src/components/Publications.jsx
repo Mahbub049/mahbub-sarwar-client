@@ -24,8 +24,8 @@ const publications = [
 
 export default function Publications() {
     return (
-        <section id="publications" className="py-20 font-montserrat px-4">
-            <div className="max-w-6xl mx-auto">
+        <section id="publications" className="py-20 font-montserrat px-4 md:px-6">
+            <div className="section-shell max-w-6xl mx-auto px-6 py-10 md:p-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">Publications</h2>
 
                 <div className="grid md:grid-cols-2 gap-8">

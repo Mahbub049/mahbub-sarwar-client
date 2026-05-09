@@ -70,7 +70,7 @@ export default function Projects() {
 
     return (
         <section id="projects" className="font-montserrat py-20 px-4 md:px-6 lg:px-10">
-            <div className="max-w-6xl mx-auto">
+            <div className="section-shell max-w-6xl mx-auto px-6 py-10 md:p-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">Projects</h2>
 
                 <div className="grid gap-10 md:grid-cols-2 auto-rows-fr">

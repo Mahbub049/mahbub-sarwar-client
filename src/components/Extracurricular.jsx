@@ -11,7 +11,7 @@ export default function ExtraCurricular() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
         >
-            <div className="max-w-6xl mx-auto">
+            <div className="section-shell max-w-6xl mx-auto px-6 py-10 md:p-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
                     Extra-Curricular Activities
                 </h2>
