@@ -33,12 +33,12 @@ export default function ContactForm() {
     return (
         <motion.section
             id="contact"
-            className="w-full  py-20 px-4 md:px-8 lg:px-12"
+            className="w-full py-20 px-4 md:px-6 lg:px-10"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
         >
-            <div className="max-w-6xl font-montserrat mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div className="section-shell max-w-6xl font-montserrat mx-auto px-6 py-10 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 {/* Contact Info */}
                 <div className="space-y-6">
                     <h2 className="text-4xl font-bold">Get in Touch</h2>

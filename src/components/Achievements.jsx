@@ -32,8 +32,8 @@ const achievements = [
 
 export default function Achievements() {
     return (
-        <section id="achievements" className="py-20 font-montserrat">
-            <div className="max-w-6xl mx-auto px-6">
+        <section id="achievements" className="py-20 font-montserrat px-4 md:px-6">
+            <div className="section-shell max-w-6xl mx-auto px-6 py-10 md:p-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
                     Achievements
                 </h2>
