@@ -8,10 +8,10 @@ import { FaDownload, FaPaperPlane } from 'react-icons/fa';
 export default function Hero() {
     return (
         <section
-            className="min-h-screen font-montserrat flex items-center justify-center px-6 pt-28 pb-16"
+            className="min-h-screen font-montserrat flex items-center justify-center px-4 md:px-6 pt-28 pb-16"
             id="hero"
         >
-            <div className="w-full max-w-7xl flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center">
+            <div className="section-shell w-full max-w-7xl px-6 py-10 md:p-12 flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center">
                 {/* 🧑‍💻 Text Content */}
                 <motion.div
                     initial={{ opacity: 0, x: -40 }}
@@ -19,7 +19,7 @@ export default function Hero() {
                     transition={{ duration: 0.8 }}
                     className="space-y-6 text-center md:text-left"
                 >
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-400 leading-snug tracking-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-500 bg-clip-text text-transparent leading-snug tracking-tight">
                         <Typewriter
                             words={['Muhammad Mahbub Sarwar Shafi']}
                             loop={false}
@@ -48,12 +48,11 @@ export default function Hero() {
                         <a href="https://github.com/Mahbub049" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform"><FaGithub /></a>
                     </div>
 
-                    {/* 📎 Buttons */}
-                    {/* <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <div className="pt-2 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <a
                             href="/Mahbub-CV.pdf"
                             download
-                            className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300 shadow-md flex items-center gap-2 justify-center"
+                            className="px-6 py-2 text-white rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 hover:opacity-90 transition duration-300 shadow-md flex items-center gap-2 justify-center"
                         >
                             <FaDownload />
                             <span>Download CV</span>
@@ -61,12 +60,12 @@ export default function Hero() {
 
                         <a
                             href="#contact"
-                            className="px-6 py-2 border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900 transition duration-300 shadow-sm flex items-center gap-2 justify-center"
+                            className="px-6 py-2 border border-cyan-500 text-cyan-600 dark:text-cyan-300 dark:border-cyan-300 rounded-full hover:bg-cyan-50 dark:hover:bg-cyan-950 transition duration-300 shadow-sm flex items-center gap-2 justify-center"
                         >
                             <FaPaperPlane />
                             <span>Contact Me</span>
                         </a>
-                    </div> */}
+                    </div>
                 </motion.div>
 
 
@@ -82,6 +81,7 @@ export default function Hero() {
                     className="flex justify-center"
                 >
                     <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-96 md:h-96">
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 blur-2xl opacity-25" />
                         <img
                             src={profilePic}
                             alt="Profile"

@@ -67,6 +67,7 @@ export default function ContactForm() {
                         <a
                             href="https://www.linkedin.com/in/mahbub049"
                             target="_blank"
+                            rel="noreferrer"
                             className="text-blue-600 hover:underline flex items-center gap-2"
                         >
                             <Linkedin size={18} /> LinkedIn
