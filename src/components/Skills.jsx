@@ -66,7 +66,7 @@ export default function Skills() {
             <div className="pointer-events-none absolute -left-24 top-16 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl dark:bg-cyan-500/10" />
             <div className="pointer-events-none absolute -right-24 bottom-16 h-72 w-72 rounded-full bg-violet-300/20 blur-3xl dark:bg-violet-500/10" />
 
-            <div className="relative z-10 mx-auto max-w-6xl">
+            <div className="relative z-10 mx-auto max-w-7xl">
                 {/* Header */}
                 <motion.div
                     initial="hidden"

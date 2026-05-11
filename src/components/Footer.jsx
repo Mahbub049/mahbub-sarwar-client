@@ -11,11 +11,11 @@ export default function Footer() {
                         </h2>
 
                         <p className="mt-1 text-sm text-slate-400">
-                            Lecturer • Full Stack Web Developer • Research Enthusiast
+                            Lecturer • Full Stack Web Developer • Researcher
                         </p>
 
                         <p className="mt-3 text-xs text-slate-500">
-                            © 2025 Mahbub Sarwar. All rights reserved.
+                            © 2026 Mahbub Sarwar. All rights reserved.
                         </p>
                     </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
                         </a>
 
                         <a
-                            href="mailto:mahbubsarwar49@gmail.com"
+                            href="mailto:mahbubsarwar5@gmail.com"
                             aria-label="Email"
                             className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-slate-200 transition hover:-translate-y-1 hover:bg-emerald-500 hover:text-white"
                         >

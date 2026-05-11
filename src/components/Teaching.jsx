@@ -12,9 +12,15 @@ import {
 const teachingData = [
     {
         course: "Computer and Its Application in Business",
-        semester: "Fall 2025",
+        semester: "Fall 2025 & Summer 2026",
         type: "Theory + Lab",
-        students: 120,
+        students: 160,
+    },
+    {
+        course: "System Analysis and Design",
+        semester: "Summer 2026",
+        type: "Theory + Lab",
+        students: 40,
     },
     {
         course: "Database Systems",

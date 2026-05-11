@@ -14,23 +14,23 @@ const publications = [
         title: "An Explainable Ensemble Learning Framework for Brain Tumor Classification Using Pretrained Models and XAI Techniques",
         journal: "Accepted in: Journal of FST Volume 3, Issue-01",
         year: 2025,
-        status: "Accepted",
+        status: "Published",
         area: "Medical AI",
     },
     {
         title: "Sentiment Classification in Movie Reviews Through a Comparative Analysis of Machine Learning Models",
         journal: "Accepted in: Journal of FST Volume 3, Issue-01",
         year: 2025,
-        status: "Accepted",
+        status: "Published",
         area: "NLP",
     },
-    {
-        title: "Advanced Brain Tumor Classification and Segmentation with an Enhanced Weighted Ensemble of CNN Models and UNet Architecture",
-        journal: "Under Review",
-        year: 2025,
-        status: "Under Review",
-        area: "Medical AI",
-    },
+    // {
+    //     title: "Advanced Brain Tumor Classification and Segmentation with an Enhanced Weighted Ensemble of CNN Models and UNet Architecture",
+    //     journal: "Under Review",
+    //     year: 2025,
+    //     status: "Under Review",
+    //     area: "Medical AI",
+    // },
 ];
 
 function getStatusClass(status) {

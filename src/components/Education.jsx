@@ -13,7 +13,7 @@ const educationData = [
         title: "M.Sc in Information and Communication Engineering",
         institution: "Bangladesh University of Professionals",
         duration: "2024 – Present",
-        gpa: "Current CGPA: 3.94",
+        gpa: "Current CGPA: 3.79",
     },
     {
         title: "B.Sc in Information and Communication Engineering",
@@ -92,7 +92,7 @@ export default function Education() {
 
                         <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center shadow-sm dark:border-white/10 dark:bg-white/[0.06]">
                             <p className="text-2xl font-black text-emerald-600 dark:text-emerald-300">
-                                3.94
+                                3.79
                             </p>
                             <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">
                                 Current

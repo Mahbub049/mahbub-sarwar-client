@@ -66,7 +66,7 @@ export default function Hero() {
         {
             icon: <FaPhone />,
             label: "Phone",
-            href: "tel:+8801999949083",
+            href: "tel:+8801341883668",
         },
         {
             icon: <FaLinkedin />,
@@ -177,7 +177,7 @@ export default function Hero() {
                         className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-xs font-bold text-cyan-700 shadow-sm dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-200"
                     >
                         <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_16px_rgba(16,185,129,0.8)]" />
-                        Lecturer • Developer • Research Enthusiast
+                        Lecturer • Developer • Researcher
                     </motion.div>
 
                     <motion.h1
@@ -377,7 +377,7 @@ export default function Hero() {
                                             Current Role
                                         </p>
                                         <h4 className="text-xs font-black text-slate-800 dark:text-white">
-                                            CSE Lecturer
+                                            Lecturer in CSE
                                         </h4>
                                     </div>
                                 </div>

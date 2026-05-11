@@ -111,7 +111,7 @@ export default function ContactForm() {
                                 <Phone className="mt-1 text-emerald-300" size={20} />
                                 <div>
                                     <p className="text-xs font-black uppercase tracking-[0.16em] text-slate-400">Phone</p>
-                                    <p className="mt-1 text-sm font-semibold">+8801999949083</p>
+                                    <p className="mt-1 text-sm font-semibold">+8801341883668</p>
                                 </div>
                             </div>
 
@@ -120,7 +120,7 @@ export default function ContactForm() {
                                 <div>
                                     <p className="text-xs font-black uppercase tracking-[0.16em] text-slate-400">Address</p>
                                     <p className="mt-1 text-sm font-semibold leading-6">
-                                        House-80, Road-06, Block-A, Pallabi, Dhaka-1216
+                                        House-11, Road-5, Rupnagar R/A, Mirpur-02, Dhaka
                                     </p>
                                 </div>
                             </div>
