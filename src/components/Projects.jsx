@@ -6,7 +6,6 @@ import {
     Server,
     Code2,
     FolderKanban,
-    Eye,
     Boxes,
     Filter,
 } from "lucide-react";
