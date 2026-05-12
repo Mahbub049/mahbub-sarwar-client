@@ -22,13 +22,17 @@ import {
     SiVercel,
     SiJavascript,
     SiTailwindcss,
+    SiNextdotjs,
+    SiTypescript,
 } from "react-icons/si";
 
 const skills = [
     { name: "React", icon: <FaReact />, type: "Frontend", color: "from-cyan-500 to-blue-600" },
+    { name: "Next.js", icon: <SiNextdotjs />, type: "Frontend", color: "from-slate-700 to-black" },
     { name: "Node.js", icon: <FaNodeJs />, type: "Backend", color: "from-emerald-500 to-green-600" },
     { name: "MongoDB", icon: <SiMongodb />, type: "Database", color: "from-green-500 to-emerald-700" },
     { name: "JavaScript", icon: <SiJavascript />, type: "Language", color: "from-yellow-400 to-orange-500" },
+    { name: "TypeScript", icon: <SiTypescript />, type: "Language", color: "from-blue-500 to-indigo-700" },
     { name: "HTML5", icon: <FaHtml5 />, type: "Frontend", color: "from-orange-500 to-red-500" },
     { name: "CSS3", icon: <FaCss3Alt />, type: "Frontend", color: "from-blue-500 to-indigo-600" },
     { name: "Tailwind", icon: <SiTailwindcss />, type: "Frontend", color: "from-cyan-400 to-sky-600" },

@@ -7,6 +7,7 @@ import {
     FaBookOpen,
     FaMicroscope,
     FaBrain,
+    FaGlobe,
 } from "react-icons/fa";
 
 const publications = [
@@ -15,7 +16,7 @@ const publications = [
         journal: "Accepted in: Journal of FST Volume 3, Issue-01",
         year: 2025,
         status: "Published",
-        area: "Medical AI",
+        area: "Biomedical Imaging",
     },
     {
         title: "Sentiment Classification in Movie Reviews Through a Comparative Analysis of Machine Learning Models",
@@ -34,6 +35,10 @@ const publications = [
 ];
 
 function getStatusClass(status) {
+    if (status === "Published") {
+        return "border-cyan-200 bg-cyan-50 text-cyan-700 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-200";
+    }
+
     if (status === "Accepted") {
         return "border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-200";
     }
@@ -46,8 +51,15 @@ function getStatusClass(status) {
 }
 
 export default function Publications() {
-    const accepted = publications.filter((pub) => pub.status === "Accepted").length;
-    const review = publications.filter((pub) => pub.status === "Under Review").length;
+    const published = publications.filter((pub) => pub.status === "Published").length;
+
+    const accepted = publications.filter(
+        (pub) => pub.status === "Accepted"
+    ).length;
+
+    const review = publications.filter(
+        (pub) => pub.status === "Under Review"
+    ).length;
 
     return (
         <section
@@ -85,11 +97,20 @@ export default function Publications() {
                     </div>
 
                     <div className="grid grid-cols-3 gap-3">
-                        <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center shadow-sm dark:border-white/10 dark:bg-white/[0.06]">
+                        {/* <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center shadow-sm dark:border-white/10 dark:bg-white/[0.06]">
                             <p className="text-2xl font-black text-blue-600 dark:text-blue-300">
                                 {publications.length}
                             </p>
                             <p className="text-[10px] font-black uppercase tracking-[0.14em] text-slate-400">Papers</p>
+                        </div> */}
+                        <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center shadow-sm dark:border-white/10 dark:bg-white/[0.06]">
+                            <p className="text-2xl font-black text-cyan-600 dark:text-cyan-300">
+                                {published}
+                            </p>
+
+                            <p className="text-[10px] font-black uppercase tracking-[0.14em] text-slate-400">
+                                Published
+                            </p>
                         </div>
                         <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center shadow-sm dark:border-white/10 dark:bg-white/[0.06]">
                             <p className="text-2xl font-black text-emerald-600 dark:text-emerald-300">
@@ -103,6 +124,7 @@ export default function Publications() {
                             </p>
                             <p className="text-[10px] font-black uppercase tracking-[0.14em] text-slate-400">Review</p>
                         </div>
+
                     </div>
                 </motion.div>
 
@@ -152,7 +174,13 @@ export default function Publications() {
                                     )}`}
                                 >
                                     <span className="inline-flex items-center gap-2">
-                                        {pub.status === "Accepted" ? <FaCheckCircle /> : <FaClock />}
+                                        {
+                                            pub.status === "Published"
+                                                ? <FaGlobe />
+                                                : pub.status === "Accepted"
+                                                    ? <FaCheckCircle />
+                                                    : <FaClock />
+                                        }
                                         {pub.status}
                                     </span>
                                 </div>

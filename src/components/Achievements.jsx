@@ -14,14 +14,18 @@ import {
 const achievements = [
     {
         title: "Dean's Appreciation",
-        date: "2023 (2 Semesters)",
-        description: "Recognized for outstanding academic performance in two consecutive semesters.",
+        achievementCount: "2× Achieved",
+        date: "2023",
+        description:
+            "Recognized for outstanding academic performance in two consecutive semesters.",
         type: "Academic",
     },
     {
         title: "BUP Scholarship",
-        date: "2021–2023 (4 Semesters)",
-        description: "Awarded based on consistent academic excellence across four semesters.",
+        achievementCount: "4× Achieved",
+        date: "2021–2023",
+        description:
+            "Awarded based on consistent academic excellence across four semesters.",
         type: "Scholarship",
     },
     {
@@ -151,11 +155,21 @@ export default function Achievements() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.45, delay: index * 0.06 }}
                                 whileHover={{ y: -7 }}
-                                className={`group relative overflow-hidden rounded-[1.7rem] border border-slate-200 bg-slate-50 p-5 shadow-lg shadow-slate-200/70 transition-all duration-300 hover:bg-white hover:shadow-2xl dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/20 ${
-                                    index === 0 ? "lg:col-span-2" : ""
-                                }`}
+                                className={`group relative overflow-hidden rounded-[1.7rem] border border-slate-200 bg-slate-50 p-5 shadow-lg shadow-slate-200/70 transition-all duration-300 hover:bg-white hover:shadow-2xl dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/20 ${index === 0 ? "lg:col-span-2" : ""
+                                    }`}
                             >
                                 <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-white dark:bg-white/5" />
+
+                                {item.achievementCount && (
+                                    <div className="absolute right-6 top-20 hidden rounded-2xl border border-amber-400/40 bg-slate-900/80 px-6 py-4 text-center shadow-xl shadow-amber-500/20 md:block">
+                                        <p className="text-3xl font-black leading-none text-amber-300">
+                                            {item.achievementCount.split("×")[0]}×
+                                        </p>
+                                        <p className="mt-1 text-[9px] font-black uppercase tracking-[0.2em] text-amber-200">
+                                            Achieved
+                                        </p>
+                                    </div>
+                                )}
 
                                 <div className="relative">
                                     <div className="mb-5 flex items-start justify-between gap-4">

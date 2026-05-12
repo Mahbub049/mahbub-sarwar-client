@@ -16,15 +16,45 @@ import project03 from "../assets/project-images/project02.png";
 import project04 from "../assets/project-images/project03.png";
 import project05 from "../assets/project-images/project04.png";
 import project06 from "../assets/project-images/project06.png";
+import project07 from "../assets/project-images/project07.png";
+import project08 from "../assets/project-images/project08.png";
+import project09 from "../assets/project-images/project09.png";
 
 const allProjects = [
+    {
+        title: "Journal of FST",
+        image: project09,
+        description:
+            "BUP FST Journal is a professional journal and institutional publication website designed to showcase journal issues, articles, editorial board members, author guidelines, and research-related announcements. It provides a clean and dynamic public interface for readers and researchers, along with a CMS-based admin panel for managing issues, pages, articles, and journal content efficiently.",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "Node.js", "MongoDB", "JWT", "Cloudinary"],
+        category: "Academic",
+        live: "https://jfst.vercel.app/"
+    },
+    {
+        title: "HomeFinance Finance Management",
+        image: project08,
+        description:
+            "Personal Budgeting App is a complete finance management website designed to track income, expenses, savings, EMI payments, grocery costs, wallet balances, and ledger transactions. It helps users manage personal and shared finances, monitor account-wise balances, track transfers, and maintain synchronized financial records with clear summaries for better budgeting decisions.",
+        tech: ["React", "Tailwind CSS", "Express.js", "Node.js", "MongoDB", "JWT"],
+        category: "Finance",
+        live: "https://homefinancebd.vercel.app/"
+    },
+    {
+        title: "BUBT Course Management Portal",
+        image: project07,
+        description:
+            "Course Management Portal is a complete academic management website designed for handling courses, assessments, marks, attendance, and OBE-related activities. It helps teachers manage student performance, submissions, and grading, while students can track tasks, deadlines, and results. The system also supports CO-PO mapping, attainment calculation, grade distribution, and Course Review Report generation.",
+        tech: ["React", "Tailwind CSS", "Express.js", "Node.js", "MongoDB", "JWT", "Supabase"],
+        category: "Academic",
+        live: "https://bubt-courses.vercel.app/"
+    },
     {
         title: "Class Routine Management System",
         image: project06,
         description:
             "This class routine management system streamlines academic scheduling with an admin panel for managing routines, faculty, and courses, and a public view for students and staff. Built with React, Tailwind CSS, Node.js, and MongoDB, it ensures real-time updates, conflict-free scheduling, and responsive design.",
         tech: ["React", "Tailwind", "MongoDB", "Express", "Node", "JWT"],
-        category: "MERN",
+        category: "Academic",
         live: "https://ictroutine.vercel.app/",
         client: "https://github.com/Mahbub049/Routine-Management-Client.git",
         server: "https://github.com/Mahbub049/Routine-Management-Server.git",
@@ -44,7 +74,7 @@ const allProjects = [
         description:
             "HostelMania is a web-based meal management system for student hostels, enabling students to choose meals, track orders, and give feedback. Built with React and Firebase, it ensures real-time updates, security, and mobile responsiveness.",
         tech: ["React", "Tailwind", "Firebase", "MongoDB"],
-        category: "Firebase",
+        category: "Professional",
         live: "https://hostelmaniabd.web.app/",
         client: "https://github.com/yourrepo2-client",
         server: "https://github.com/yourrepo2-server",
@@ -55,7 +85,7 @@ const allProjects = [
         description:
             "TrioEats is a restaurant management website offering a seamless dining experience. Customers can explore top dishes, reserve seats, contact the restaurant, and view its location through an interactive map.",
         tech: ["React", "Tailwind", "Firebase"],
-        category: "Firebase",
+        category: "Professional",
         live: "https://trioeats-8ebfe.web.app/",
         client: "https://github.com/yourrepo3-client",
         server: "https://github.com/yourrepo3-server",
@@ -66,7 +96,7 @@ const allProjects = [
         description:
             "WanderSEA is a tourism management platform showcasing Southeast Asia’s beauty and culture. Users can add, update, or delete tourist spots, while visitors explore destinations without login.",
         tech: ["React", "Tailwind", "Firebase"],
-        category: "Firebase",
+        category: "Professional",
         live: "https://wandersea-d210a.web.app/",
         client: "https://github.com/yourrepo4-client",
         server: "https://github.com/yourrepo4-server",
@@ -77,13 +107,13 @@ const allProjects = [
         description:
             "Radiant Residences is a luxury accommodation platform featuring curated, high-end properties in top global destinations. It offers a refined, responsive browsing and booking experience.",
         tech: ["React", "Tailwind", "Firebase"],
-        category: "Firebase",
+        category: "Professional",
         live: "https://radiant-residences.web.app/",
         client: "https://github.com/Mahbub049/Radiant-Residences",
     },
 ];
 
-const filters = ["All", "MERN", "Firebase", "Portfolio"];
+const filters = ["All", "Academic", "Finance", "Professional", "Portfolio"];
 
 const fadeUp = {
     hidden: { opacity: 0, y: 22 },
@@ -103,7 +133,7 @@ export default function Projects() {
         return allProjects.filter((project) => project.category === activeFilter);
     }, [activeFilter]);
 
-    const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4);
+    const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
 
     const stats = [
         { label: "Projects", value: allProjects.length },
@@ -197,11 +227,10 @@ export default function Projects() {
                                 setActiveFilter(filter);
                                 setShowAll(false);
                             }}
-                            className={`rounded-full px-4 py-2 text-sm font-bold transition-all duration-300 ${
-                                activeFilter === filter
-                                    ? "bg-gradient-to-r from-cyan-500 to-violet-600 text-white shadow-lg shadow-blue-500/25"
-                                    : "border border-slate-200 bg-white text-slate-600 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 dark:hover:bg-blue-400/10 dark:hover:text-blue-200"
-                            }`}
+                            className={`rounded-full px-4 py-2 text-sm font-bold transition-all duration-300 ${activeFilter === filter
+                                ? "bg-gradient-to-r from-cyan-500 to-violet-600 text-white shadow-lg shadow-blue-500/25"
+                                : "border border-slate-200 bg-white text-slate-600 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 dark:hover:bg-blue-400/10 dark:hover:text-blue-200"
+                                }`}
                         >
                             {filter}
                         </button>
@@ -286,9 +315,8 @@ export default function Projects() {
                                                             href={project.client}
                                                             target="_blank"
                                                             rel="noreferrer"
-                                                            className={`inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-4 py-3 text-sm font-black text-white transition hover:bg-slate-800 ${
-                                                                !project.server ? "sm:col-span-2" : ""
-                                                            }`}
+                                                            className={`inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-4 py-3 text-sm font-black text-white transition hover:bg-slate-800 ${!project.server ? "sm:col-span-2" : ""
+                                                                }`}
                                                         >
                                                             <Github size={16} />
                                                             Client
@@ -300,9 +328,8 @@ export default function Projects() {
                                                             href={project.server}
                                                             target="_blank"
                                                             rel="noreferrer"
-                                                            className={`inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-4 py-3 text-sm font-black text-white transition hover:bg-slate-800 ${
-                                                                !project.client ? "sm:col-span-2" : ""
-                                                            }`}
+                                                            className={`inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-4 py-3 text-sm font-black text-white transition hover:bg-slate-800 ${!project.client ? "sm:col-span-2" : ""
+                                                                }`}
                                                         >
                                                             <Server size={16} />
                                                             Server

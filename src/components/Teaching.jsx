@@ -26,13 +26,13 @@ const teachingData = [
         course: "Database Systems",
         semester: "Spring 2026",
         type: "Theory + Lab",
-        students: 40,
+        students: 32,
     },
     {
         course: "E-Commerce and Web Management",
         semester: "Spring 2026",
         type: "Theory + Lab",
-        students: 40,
+        students: 47,
     },
 ];
 
