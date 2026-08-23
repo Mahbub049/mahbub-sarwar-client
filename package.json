@@ -1,53 +1,30 @@
 {
-  "name": "portfolio-frontend",
-  "version": "2.0.0",
+  "name": "mahbub-sarwar-portfolio-v3",
+  "version": "3.0.0",
   "private": true,
-  "dependencies": {
-    "@material-tailwind/react": "^2.1.10",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "aos": "^2.3.4",
-    "axios": "^1.10.0",
-    "framer-motion": "^12.19.2",
-    "lucide-react": "^0.525.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-icons": "^5.5.0",
-    "react-router-dom": "^7.6.3",
-    "react-scripts": "5.0.1",
-    "react-simple-typewriter": "^5.0.1",
-    "react-vertical-timeline-component": "^3.5.3",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "lucide-react": "1.33.0",
+    "motion": "13.1.1",
+    "next": "16.3.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17"
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "16.3.2",
+    "postcss": "latest",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2"
   }
 }
