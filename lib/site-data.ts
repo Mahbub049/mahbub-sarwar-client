@@ -5,6 +5,7 @@ export type EducationItem = {
   result: string;
   level: string;
   academicRecordId?: string;
+  logo: string;
 };
 
 export type ExperienceItem = {
@@ -59,6 +60,7 @@ export const education: EducationItem[] = [
     result: "Current CGPA: 3.79",
     level: "Postgraduate",
     academicRecordId: "msc-bup",
+    logo: "https://images.seeklogo.com/logo-png/36/1/bangladesh-university-of-professionals-bup-logo-png_seeklogo-366021.png",
   },
   {
     degree: "B.Sc in Information and Communication Engineering",
@@ -67,6 +69,7 @@ export const education: EducationItem[] = [
     result: "CGPA: 3.89",
     level: "Undergraduate",
     academicRecordId: "bsc-bup",
+    logo: "https://images.seeklogo.com/logo-png/36/1/bangladesh-university-of-professionals-bup-logo-png_seeklogo-366021.png",
   },
   {
     degree: "Higher Secondary Certificate",
@@ -74,6 +77,7 @@ export const education: EducationItem[] = [
     period: "2017 — 2019",
     result: "GPA: 4.83",
     level: "College",
+    logo: "https://images.seeklogo.com/logo-png/46/1/adamjee-cantonment-college-logo-png_seeklogo-465495.png",
   },
   {
     degree: "Secondary School Certificate",
@@ -81,6 +85,7 @@ export const education: EducationItem[] = [
     period: "2015 — 2017",
     result: "GPA: 5.00",
     level: "School",
+    logo: "https://images.seeklogo.com/logo-png/55/1/shaheed-ramiz-uddin-cantonment-college-logo-png_seeklogo-550317.png",
   },
 ];
 

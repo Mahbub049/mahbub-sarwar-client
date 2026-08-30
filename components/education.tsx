@@ -29,8 +29,24 @@ export function Education() {
           {education.map((item, index) => (
             <Reveal key={item.degree} delay={index * 0.06}>
               <article className="group grid gap-4 border-b hairline py-8 last:border-b-0 md:grid-cols-[7rem_1fr_auto] md:items-start md:gap-8 md:py-10">
-                <div className="relative">
-                  <p className="font-display text-xs font-bold tracking-[0.03em] text-[var(--muted)]">{item.period}</p>
+                <div className="relative flex items-center gap-3 md:flex-col md:items-center md:gap-3">
+                  <p className="font-display text-xs font-bold tracking-[0.03em] text-[var(--muted)] md:text-center">
+                    {item.period}
+                  </p>
+
+                  <div
+                    className="group/logo relative flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-[var(--line)] bg-white p-1.5 shadow-[0_8px_24px_rgba(15,23,42,.08)] transition duration-300 group-hover:-translate-y-0.5 group-hover:border-[color-mix(in_srgb,var(--accent)_28%,var(--line))] group-hover:shadow-[0_10px_28px_rgba(31,93,170,.12)] md:h-12 md:w-12"
+                    title={item.institution}
+                  >
+                    <img
+                      src={item.logo}
+                      alt={`${item.institution} logo`}
+                      loading="lazy"
+                      className="h-full w-full object-contain"
+                    />
+                    <span className="pointer-events-none absolute -inset-1 -z-10 rounded-[1.15rem] bg-[color-mix(in_srgb,var(--accent)_10%,transparent)] opacity-0 blur-md transition-opacity duration-300 group-hover/logo:opacity-100" />
+                  </div>
+
                   <span className="absolute -right-[2.03rem] top-1.5 hidden h-2.5 w-2.5 rounded-full border-2 border-[var(--bg)] bg-[var(--accent)] shadow-[0_0_0_4px_rgba(61,160,255,.12)] md:block" />
                 </div>
 
