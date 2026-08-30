@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowUpRight, Code2, ExternalLink, Layers3, Plus, X } from "lucide-react";
+import { Code2, ExternalLink, Layers3, Plus, X } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 import { projects } from "@/lib/site-data";
 import { SectionHeading } from "./section-heading";
@@ -26,7 +26,7 @@ export function Projects() {
         <SectionHeading
           eyebrow="Projects"
           number="05"
-          title="Selected Projects"
+          title="Projects"
           copy="Academic, institutional, finance, and full-stack systems built for practical use."
         />
 
@@ -136,9 +136,6 @@ export function Projects() {
           </div>
         ) : null}
 
-        <div className="mt-8 flex items-center justify-end gap-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[var(--muted)]">
-          Selected work <ArrowUpRight size={14} />
-        </div>
       </div>
     </section>
   );

@@ -1,9 +1,17 @@
-import { GraduationCap } from "lucide-react";
+"use client";
+
+import { BookOpenText, GraduationCap } from "lucide-react";
+import { useState } from "react";
 import { education } from "@/lib/site-data";
+import { academicRecords } from "@/lib/academic-records";
+import { AcademicRecordModal } from "./academic-record-modal";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./section-heading";
 
 export function Education() {
+  const [activeRecordId, setActiveRecordId] = useState<string | null>(null);
+  const activeRecord = activeRecordId ? academicRecords[activeRecordId] : undefined;
+
   return (
     <section id="education" className="section-pad relative border-t hairline">
       <div className="site-shell relative z-10">
@@ -36,16 +44,36 @@ export function Education() {
                   <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{item.institution}</p>
                 </div>
 
-                <div className="md:text-right">
+                <div className="flex flex-col items-start gap-2.5 md:items-end md:text-right">
                   <span className="inline-flex rounded-full border hairline bg-[var(--surface)] px-3 py-2 text-xs font-extrabold">
                     {item.result}
                   </span>
+
+                  {item.academicRecordId ? (
+                    <button
+                      type="button"
+                      onClick={() => setActiveRecordId(item.academicRecordId ?? null)}
+                      aria-label={`View ${item.degree} transcript`}
+                      className="focus-ring group/record inline-flex items-center gap-1.5 rounded-full border border-[color-mix(in_srgb,var(--accent)_24%,var(--line))] bg-[color-mix(in_srgb,var(--accent)_8%,var(--surface))] px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.08em] text-[var(--accent)] shadow-[0_10px_30px_rgba(31,93,170,.08)] transition hover:-translate-y-0.5 hover:border-[color-mix(in_srgb,var(--accent)_44%,var(--line))] hover:bg-[color-mix(in_srgb,var(--accent)_12%,var(--surface))]"
+                    >
+                      <BookOpenText size={13} />
+                      Transcript
+                    </button>
+                  ) : null}
                 </div>
               </article>
             </Reveal>
           ))}
         </div>
       </div>
+
+      {activeRecord ? (
+        <AcademicRecordModal
+          record={activeRecord}
+          open={Boolean(activeRecord)}
+          onClose={() => setActiveRecordId(null)}
+        />
+      ) : null}
     </section>
   );
 }

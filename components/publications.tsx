@@ -51,9 +51,16 @@ export function Publications() {
                     </div>
                   </div>
 
-                  <span className="hidden h-10 w-10 place-items-center rounded-full border hairline text-[var(--muted)] transition group-hover:border-cyan-400/30 group-hover:text-[var(--accent)] sm:grid">
-                    <ArrowUpRight size={16} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </span>
+                  <a
+                    href={publication.researchGateUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${publication.title} on ResearchGate`}
+                    className="inline-flex w-fit items-center gap-2 rounded-full border hairline bg-[var(--surface-strong)] px-3.5 py-2 text-[10px] font-extrabold uppercase tracking-[0.14em] text-[var(--muted)] transition hover:border-cyan-400/35 hover:text-[var(--accent)] sm:mt-0"
+                  >
+                    <span>ResearchGate</span>
+                    <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </a>
                 </div>
               </article>
             </Reveal>

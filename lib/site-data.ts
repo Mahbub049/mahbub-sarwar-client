@@ -4,6 +4,7 @@ export type EducationItem = {
   period: string;
   result: string;
   level: string;
+  academicRecordId?: string;
 };
 
 export type ExperienceItem = {
@@ -57,6 +58,7 @@ export const education: EducationItem[] = [
     period: "2024 — Present",
     result: "Current CGPA: 3.79",
     level: "Postgraduate",
+    academicRecordId: "msc-bup",
   },
   {
     degree: "B.Sc in Information and Communication Engineering",
@@ -64,6 +66,7 @@ export const education: EducationItem[] = [
     period: "2020 — 2024",
     result: "CGPA: 3.89",
     level: "Undergraduate",
+    academicRecordId: "bsc-bup",
   },
   {
     degree: "Higher Secondary Certificate",
@@ -260,7 +263,7 @@ export const projects: ProjectItem[] = [
       "An institutional journal platform for issues, articles, editorial boards, author guidance, research announcements, and CMS-based publishing workflows.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "Node.js", "MongoDB", "JWT", "Cloudinary"],
     category: "Academic",
-    live: "https://jfst.vercel.app/",
+    live: "https://ijfst.bup.edu.bd/",
     featured: true,
   },
   {
@@ -352,12 +355,40 @@ export const projects: ProjectItem[] = [
 
 export const achievements = [
   {
+    title: "Vice Chancellor's Award",
+    issuer: "Bangladesh University of Professionals",
+    value: "1×",
+    year: "2021",
+    copy: "University-level recognition presented by Bangladesh University of Professionals.",
+    size: "large",
+    gallery: [
+      {
+        src: "/images/achievements/vc-award-01.webp",
+        alt: "Vice Chancellor's Award plaque",
+      },
+      {
+        src: "/images/achievements/vc-award-02.webp",
+        alt: "Portrait holding the Vice Chancellor's Award plaque",
+      },
+    ],
+  },
+  {
     title: "Dean's Appreciation",
     issuer: "Bangladesh University of Professionals",
     value: "2×",
     year: "2023",
     copy: "Recognition for outstanding academic performance in consecutive semesters.",
     size: "large",
+    gallery: [
+      {
+        src: "/images/achievements/deans-appreciation-01.webp",
+        alt: "Dean's Appreciation award ceremony",
+      },
+      {
+        src: "/images/achievements/deans-appreciation-02.webp",
+        alt: "Dean's Appreciation award cheque",
+      },
+    ],
   },
   {
     title: "BUP Scholarship",
@@ -366,6 +397,7 @@ export const achievements = [
     year: "2021–2023",
     copy: "Scholarship awards based on consistent academic excellence.",
     size: "large",
+    gallery: [],
   },
   {
     title: "IEEE COVID-19 Congress",
@@ -374,6 +406,12 @@ export const achievements = [
     year: "2020",
     copy: "Second position in an international idea contest organized by IEEE.",
     size: "small",
+    gallery: [
+      {
+        src: "/images/achievements/ieee-covid19-runner-up.webp",
+        alt: "International COVID19 Congress first runner-up certificate",
+      },
+    ],
   },
   {
     title: "MindExperia Idea Contest",
@@ -382,6 +420,12 @@ export const achievements = [
     year: "2020",
     copy: "National ranking in a BUP Robotics Club technology-idea competition.",
     size: "small",
+    gallery: [
+      {
+        src: "/images/achievements/mindexperia-6th-place.webp",
+        alt: "MindExperia sixth place certificate",
+      },
+    ],
   },
   {
     title: "Independence Day Essay Competition",
@@ -390,6 +434,12 @@ export const achievements = [
     year: "2019",
     copy: "First place in a national-level writing competition held at ACC.",
     size: "wide",
+    gallery: [
+      {
+        src: "/images/achievements/independence-day-champion.webp",
+        alt: "Receiving the Independence Day Essay Competition award",
+      },
+    ],
   },
 ];
 
@@ -401,6 +451,8 @@ export const publications = [
     year: "2025",
     status: "Published",
     area: "Biomedical Imaging · XAI",
+    researchGateUrl:
+      "https://www.researchgate.net/publication/394815037_n_Explainable_Ensemble_Learning_Framework_for_Brain_Tumour_Using_Pretrained_Models_and_XAI_Techniques",
   },
   {
     title:
@@ -409,6 +461,8 @@ export const publications = [
     year: "2025",
     status: "Published",
     area: "Natural Language Processing",
+    researchGateUrl:
+      "https://www.researchgate.net/publication/394814401_Comparison_of_Machine_Learning_for_Sentiment_Analysis_in_Movie_Reviews",
   },
 ];
 
