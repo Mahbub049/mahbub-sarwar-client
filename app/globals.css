@@ -266,3 +266,17 @@ a {
   position: relative;
   z-index: 1;
 }
+
+/* Portfolio toast styling (Sonner) */
+[data-sonner-toast].portfolio-toast {
+  border: 1px solid var(--line) !important;
+  border-radius: 1rem !important;
+  background: color-mix(in srgb, var(--surface-strong) 94%, transparent) !important;
+  color: var(--text) !important;
+  box-shadow: var(--shadow) !important;
+  backdrop-filter: blur(18px);
+}
+
+[data-sonner-toast].portfolio-toast [data-description] {
+  color: var(--muted) !important;
+}

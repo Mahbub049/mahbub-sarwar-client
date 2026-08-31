@@ -12,6 +12,7 @@ type GalleryPhoto = {
 
 type AchievementGalleryModalProps = {
   open: boolean;
+  eyebrow?: string;
   title: string;
   issuer: string;
   photos: GalleryPhoto[];
@@ -20,6 +21,7 @@ type AchievementGalleryModalProps = {
 
 export function AchievementGalleryModal({
   open,
+  eyebrow = "Award gallery",
   title,
   issuer,
   photos,
@@ -84,7 +86,7 @@ export function AchievementGalleryModal({
           <div className="min-w-0">
             <div className="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[var(--accent)]">
               <Images size={14} />
-              Award gallery
+              {eyebrow}
             </div>
             <h3 className="mt-1.5 truncate font-display text-xl font-semibold tracking-[-0.03em] sm:text-2xl">
               {title}

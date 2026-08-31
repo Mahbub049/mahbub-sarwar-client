@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Space_Grotesk } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -85,6 +86,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body className={`${manrope.variable} ${spaceGrotesk.variable}`}>
         {children}
+        <Toaster
+          position="top-right"
+          richColors
+          closeButton
+          toastOptions={{
+            className: "portfolio-toast",
+          }}
+        />
       </body>
     </html>
   );

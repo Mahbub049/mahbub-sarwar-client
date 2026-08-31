@@ -319,3 +319,53 @@ node_modules/
 ```
 
 Only the `.env.example` files should be in Git.
+
+## Contact form (Brevo) and visitor counter
+
+The portfolio contact form now posts to `POST /api/contact`, which sends the message from the server through Brevo's transactional email API. The Brevo API key is never exposed to the browser.
+
+### 1. Install the toast dependency
+
+```bash
+npm install sonner
+```
+
+### 2. Configure Brevo
+
+1. Create/sign in to a Brevo account.
+2. In **Settings → Senders, Domains & Dedicated IPs → Senders**, add and verify the sender email you want the portfolio to send from.
+3. In **SMTP & API → API Keys**, generate a new API key and copy it immediately.
+4. Copy `.env.example` to `.env.local` and set:
+
+```env
+BREVO_API_KEY=xkeysib-...
+BREVO_SENDER_EMAIL=your-verified-sender@yourdomain.com
+BREVO_SENDER_NAME=Mahbub Sarwar Portfolio
+CONTACT_RECIPIENT_EMAIL=mahbubsarwar5@gmail.com
+```
+
+The visitor's email is set as `replyTo`, so replying to a portfolio enquiry from your inbox replies directly to the visitor.
+
+### 3. Configure the visitor counter (Upstash Redis)
+
+A serverless deployment cannot safely persist a counter in local memory/files. Create a free Redis database in Upstash and add its REST credentials:
+
+```env
+UPSTASH_REDIS_REST_URL=https://....upstash.io
+UPSTASH_REDIS_REST_TOKEN=...
+```
+
+The footer calls `POST /api/views`. A one-year HTTP-only cookie prevents ordinary refreshes in the same browser from increasing the public visitor count repeatedly. The same Redis connection also rate-limits the contact form to 5 submissions per 10 minutes per IP when Redis is configured.
+
+### 4. Local test
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`, submit the contact form, verify that the email arrives, and confirm that the footer displays the visitor badge.
+
+### 5. Vercel
+
+In **Vercel → Project → Settings → Environment Variables**, add all six server-side values shown above for Production (and Preview if desired), then redeploy. Never prefix the Brevo or Upstash secrets with `NEXT_PUBLIC_`.

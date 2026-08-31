@@ -6,6 +6,7 @@ export type EducationItem = {
   level: string;
   academicRecordId?: string;
   logo: string;
+  logoCrop?: boolean;
 };
 
 export type ExperienceItem = {
@@ -43,7 +44,7 @@ export const site = {
   shortName: "Mahbub Sarwar",
   role: "Lecturer · Researcher · Software Engineer",
   headline:
-    "Advancing computing education, software engineering, and trustworthy AI through practical, research-driven work.",
+    "Building practical, research-driven work across computing education, software engineering, and trustworthy AI.",
   location: "Dhaka, Bangladesh",
   email: "mahbubsarwar5@gmail.com",
   phone: "+8801341883668",
@@ -85,7 +86,7 @@ export const education: EducationItem[] = [
     period: "2015 — 2017",
     result: "GPA: 5.00",
     level: "School",
-    logo: "https://images.seeklogo.com/logo-png/55/1/shaheed-ramiz-uddin-cantonment-college-logo-png_seeklogo-550317.png",
+    logo: "/images/education/shaheed-ramiz-uddin-cantonment-school.png",
   },
 ];
 
@@ -186,7 +187,54 @@ export const activities = [
         period: "Mar 2023 — May 2024",
         points: [
           'Launched "IEEE Branch Fest 2023", a two-day flagship event with seven segments.',
+          "Organized the 2nd International ICT Conference on Sustainability.",
           "Organized a major web-development webinar featuring Jhankar Mahbub.",
+        ],
+        gallery: [
+          {
+            src: "/images/activities/ieee-cs-01.webp",
+            alt: "IEEE Computer Society BUP Student Branch Chapter executive panel",
+          },
+          {
+            src: "/images/activities/ieee-cs-02.webp",
+            alt: "IEEE Computer Society BUP webinar featuring Jhankar Mahbub",
+          },
+          {
+            src: "/images/activities/ieee-cs-03.webp",
+            alt: "IEEE Computer Society BUP event group photo",
+          },
+          {
+            src: "/images/activities/ieee-cs-04.webp",
+            alt: "IEEE Computer Society BUP Branch Fest chairperson recognition",
+          },
+          {
+            src: "/images/activities/ieee-cs-05.webp",
+            alt: "IEEE Computer Society BUP chapter event team",
+          },
+          {
+            src: "/images/activities/ieee-cs-06.webp",
+            alt: "IEEE Computer Society BUP technology event booth",
+          },
+          {
+            src: "/images/activities/ieee-cs-07.webp",
+            alt: "IEEE BUP Branch Fest 2023 prize-giving ceremony",
+          },
+          {
+            src: "/images/activities/ieee-cs-08.webp",
+            alt: "IEEE BUP Branch Fest 2023 organizer award plaque",
+          },
+          {
+            src: "/images/activities/ieee-cs-09.webp",
+            alt: "2nd International ICT Conference on Sustainability",
+          },
+          {
+            src: "/images/activities/ieee-cs-10.webp",
+            alt: "IEEE BUP Branch Fest 2023 recognition ceremony",
+          },
+          {
+            src: "/images/activities/ieee-cs-11.webp",
+            alt: "IEEE BUP Branch Fest 2023 organizer recognition",
+          },
         ],
       },
       {
@@ -196,6 +244,7 @@ export const activities = [
           "Planned and coordinated inauguration events for IEEE CS BUP SBC.",
           'Managed the "Research Reveals Program" with IEEE SB, WIE, and CS.',
         ],
+        gallery: [],
       },
     ],
   },
@@ -210,33 +259,74 @@ export const activities = [
           "Supported technical workshops and promotional design for BUP Day.",
           "Assisted event teams with planning and presentation design.",
         ],
+        gallery: [
+          {
+            src: "/images/activities/buprc-role-01.webp",
+            alt: "BUP Robotics Club Assistant Joint Secretary committee profile",
+          },
+        ],
+        links: [
+          {
+            label: "YouTube",
+            href: "https://youtu.be/FsvSmMg82u0?si=1S-sydNkh89k8IIk",
+            type: "youtube",
+            embedUrl: "https://www.youtube.com/embed/FsvSmMg82u0?rel=0",
+          },
+          {
+            label: "Google Photos",
+            href: "https://photos.app.goo.gl/QWf6ZMUW3jb2vQni9",
+            type: "photos-video",
+          },
+        ],
       },
     ],
   },
   {
     organization: "BUP InfoTech Club",
-    meta: "Event · 2022",
+    meta: "Event · 2023",
     roles: [
       {
         title: "Gaming Event Host",
-        period: "2022",
+        period: "2023",
         points: ["Hosted the Intra-BUP MIST Gaming Contest."],
+        gallery: [
+          {
+            src: "/images/activities/bupitc-event-01.webp",
+            alt: "BUP InfoTech Club Valorant gaming tournament event poster",
+          },
+        ],
+        links: [
+          {
+            label: "Event",
+            href: "https://fb.me/e/2pIRwwJPl",
+            type: "event",
+            poster: {
+              src: "/images/activities/bupitc-event-01.webp",
+              alt: "BUP InfoTech Club Valorant gaming tournament event poster",
+            },
+          },
+        ],
       },
     ],
   },
   {
     organization: "Volunteering",
-    meta: "Conference & national events",
+    meta: "National event · 2018",
     roles: [
       {
         title: "Volunteer",
-        period: "2023",
-        points: ["2nd International ICT Conference on Sustainability."],
-      },
-      {
-        title: "Volunteer",
-        period: "2022",
-        points: ["National-level academic and technology events at BUP."],
+        period: "2018",
+        points: ["Volunteered at the ACC National Science Festival."],
+        gallery: [
+          {
+            src: "/images/activities/volunteer-acc-01.webp",
+            alt: "Volunteer at the Adamjee Cantonment College National Science Festival",
+          },
+          {
+            src: "/images/activities/volunteer-acc-02.webp",
+            alt: "Volunteer group at the Adamjee Cantonment College National Science Festival",
+          },
+        ],
       },
     ],
   },
@@ -256,7 +346,7 @@ export const skills = {
   ],
   languages: ["Python", "C/C++", "Java", "PHP", "HTML5", "CSS3"],
   tools: ["Git", "GitHub", "Firebase", "Vercel", "Canva", "Google Drive"],
-  focus: ["Full-stack systems", "Academic software", "Machine learning", "NLP", "Explainable AI"],
+  focus: ["Biomedical imaging", "NLP", "AI"],
 };
 
 export const projects: ProjectItem[] = [
@@ -419,16 +509,20 @@ export const achievements = [
     ],
   },
   {
-    title: "MindExperia Idea Contest",
-    issuer: "BUP Robotics Club",
-    value: "6th Place",
-    year: "2020",
-    copy: "National ranking in a BUP Robotics Club technology-idea competition.",
+    title: "IEEE BUP Branch Fest 2023",
+    issuer: "IEEE Computer Society BUP Student Branch Chapter",
+    value: "Organizer Award",
+    year: "2023",
+    copy: "Recognition for organizing IEEE BUP Branch Fest 2023 while serving as Chairperson of the IEEE Computer Society BUP Student Branch Chapter.",
     size: "small",
     gallery: [
       {
-        src: "/images/achievements/mindexperia-6th-place.webp",
-        alt: "MindExperia sixth place certificate",
+        src: "/images/achievements/organizer-award-01.webp",
+        alt: "Holding the IEEE BUP Branch Fest 2023 organizer award",
+      },
+      {
+        src: "/images/achievements/organizer-award-02.webp",
+        alt: "IEEE BUP Branch Fest 2023 organizer award plaque",
       },
     ],
   },
@@ -443,6 +537,20 @@ export const achievements = [
       {
         src: "/images/achievements/independence-day-champion.webp",
         alt: "Receiving the Independence Day Essay Competition award",
+      },
+    ],
+  },
+  {
+    title: "MindExperia Idea Contest",
+    issuer: "BUP Robotics Club",
+    value: "6th Place",
+    year: "2020",
+    copy: "National ranking in a BUP Robotics Club technology-idea competition.",
+    size: "small",
+    gallery: [
+      {
+        src: "/images/achievements/mindexperia-6th-place.webp",
+        alt: "MindExperia sixth place certificate",
       },
     ],
   },

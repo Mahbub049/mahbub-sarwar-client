@@ -3,10 +3,11 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "motion/react";
-import { ArrowUpRight, Braces, GraduationCap, Mail, Microscope } from "lucide-react";
+import { ArrowUpRight, Braces, FileText, GraduationCap, Mail, Microscope } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import type { MouseEvent } from "react";
 import { site } from "@/lib/site-data";
+import { CvViewerModal } from "@/components/cv-viewer-modal";
 
 const FULL_NAME = "Mahbub Sarwar";
 
@@ -189,6 +190,7 @@ function RepeatingTypeName() {
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
+  const [cvOpen, setCvOpen] = useState(false);
 
   return (
     <section id="about" className="relative min-h-screen overflow-hidden pt-28 md:pt-32">
@@ -215,18 +217,31 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="mt-8 max-w-2xl font-display text-xl font-medium leading-[1.48] tracking-[-0.02em] text-[var(--text)] sm:text-2xl md:text-[1.62rem]">
-            {site.headline}
-          </p>
+          <div className="mt-7 max-w-[40rem]">
+            <div className="flex items-start gap-3.5">
+              <span
+                aria-hidden="true"
+                className="mt-1 h-12 w-[3px] shrink-0 rounded-full bg-gradient-to-b from-[var(--accent)] via-cyan-400/70 to-transparent"
+              />
+              <p className="max-w-2xl text-[15px] font-medium leading-7 text-[var(--muted)] sm:text-base sm:leading-7">
+                {site.headline}
+              </p>
+            </div>
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#projects" className="btn-primary focus-ring group rounded-full px-5 py-3 text-sm font-extrabold">
               Explore work
               <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-            <a href={site.cv} download className="btn-secondary focus-ring rounded-full px-5 py-3 text-sm font-extrabold">
-              Download CV
-            </a>
+            <button
+              type="button"
+              onClick={() => setCvOpen(true)}
+              className="btn-secondary focus-ring group rounded-full px-5 py-3 text-sm font-extrabold"
+            >
+              <FileText size={16} className="transition-transform duration-200 group-hover:-translate-y-0.5" />
+              View CV
+            </button>
           </div>
 
           <div className="mt-9 flex flex-wrap items-center gap-2.5">
@@ -253,7 +268,7 @@ export function Hero() {
             {[
               { icon: GraduationCap, label: "Teaching", value: "Lecturer" },
               { icon: Braces, label: "Engineering", value: "Full-stack" },
-              { icon: Microscope, label: "Research", value: "AI · XAI · NLP" },
+              { icon: Microscope, label: "Research", value: "Biomedical Imaging · NLP · AI" },
             ].map(({ icon: Icon, label, value }) => (
               <div key={label} className="border-l hairline py-2 pl-4">
                 <div className="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[var(--muted)]">
@@ -275,7 +290,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-
+      <CvViewerModal open={cvOpen} onClose={() => setCvOpen(false)} />
     </section>
   );
 }

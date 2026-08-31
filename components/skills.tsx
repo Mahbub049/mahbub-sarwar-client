@@ -1,8 +1,7 @@
 import type { ComponentType } from "react";
 import {
   BrainCircuit,
-  Eye,
-  GraduationCap,
+  Microscope,
   Layers3,
   Network,
   Palette,
@@ -56,11 +55,9 @@ const skillIcons: Record<string, SkillIcon> = {
   Vercel: SiVercel,
   Canva: Palette,
   "Google Drive": SiGoogledrive,
-  "Full-stack systems": Layers3,
-  "Academic software": GraduationCap,
-  "Machine learning": BrainCircuit,
+  "Biomedical imaging": Microscope,
   NLP: Network,
-  "Explainable AI": Eye,
+  AI: BrainCircuit,
 };
 
 const groups = [

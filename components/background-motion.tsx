@@ -16,11 +16,43 @@ export function BackgroundMotion() {
     <div className="ambient-motion pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
       <motion.div
         style={reduceMotion ? undefined : { x: xPrimary, y: yPrimary, rotate }}
+        animate={
+          reduceMotion
+            ? undefined
+            : {
+                scale: [1, 1.055, 0.985, 1],
+                opacity: [0.72, 0.92, 0.76, 0.72],
+              }
+        }
+        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
         className="absolute -left-[18vw] top-[8vh] h-[42rem] w-[72vw] rounded-[50%] bg-cyan-400/[0.055] blur-[120px] dark:bg-cyan-400/[0.045]"
       />
       <motion.div
         style={reduceMotion ? undefined : { y: ySecondary }}
+        animate={
+          reduceMotion
+            ? undefined
+            : {
+                x: [0, -34, 14, 0],
+                scale: [1, 0.98, 1.045, 1],
+              }
+        }
+        transition={{ duration: 38, repeat: Infinity, ease: "easeInOut" }}
         className="absolute -right-[20vw] top-[38vh] h-[46rem] w-[68vw] rounded-[50%] bg-violet-500/[0.055] blur-[130px] dark:bg-violet-500/[0.045]"
+      />
+
+      <motion.div
+        animate={
+          reduceMotion
+            ? undefined
+            : {
+                x: [0, 42, 8, -28, 0],
+                y: [0, -18, 24, 8, 0],
+                opacity: [0.22, 0.38, 0.28, 0.34, 0.22],
+              }
+        }
+        transition={{ duration: 46, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-[42%] top-[18%] h-48 w-48 rounded-full bg-blue-400/[0.055] blur-[90px] dark:bg-blue-400/[0.045]"
       />
 
       <motion.svg
@@ -37,11 +69,56 @@ export function BackgroundMotion() {
             <stop offset="1" stopColor="var(--accent-3)" stopOpacity="0" />
           </linearGradient>
         </defs>
-        <path d="M-140 220C190 48 390 395 690 212S1170 52 1740 290" fill="none" stroke="url(#scroll-field)" strokeWidth="1.1" />
-        <path d="M-170 392C145 214 410 530 730 352S1210 205 1760 456" fill="none" stroke="url(#scroll-field)" strokeWidth="0.9" />
-        <path d="M-110 690C250 500 480 835 820 652S1270 520 1730 740" fill="none" stroke="url(#scroll-field)" strokeWidth="1" />
-        <path d="M-130 906C190 738 510 1038 850 860S1310 730 1760 955" fill="none" stroke="url(#scroll-field)" strokeWidth="0.8" />
+        <motion.path
+          d="M-140 220C190 48 390 395 690 212S1170 52 1740 290"
+          fill="none"
+          stroke="url(#scroll-field)"
+          strokeWidth="1.1"
+          strokeDasharray="8 22"
+          animate={reduceMotion ? undefined : { strokeDashoffset: [0, -120] }}
+          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.path
+          d="M-170 392C145 214 410 530 730 352S1210 205 1760 456"
+          fill="none"
+          stroke="url(#scroll-field)"
+          strokeWidth="0.9"
+          strokeDasharray="6 28"
+          animate={reduceMotion ? undefined : { strokeDashoffset: [0, 132] }}
+          transition={{ duration: 34, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.path
+          d="M-110 690C250 500 480 835 820 652S1270 520 1730 740"
+          fill="none"
+          stroke="url(#scroll-field)"
+          strokeWidth="1"
+          strokeDasharray="10 30"
+          animate={reduceMotion ? undefined : { strokeDashoffset: [0, -150] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.path
+          d="M-130 906C190 738 510 1038 850 860S1310 730 1760 955"
+          fill="none"
+          stroke="url(#scroll-field)"
+          strokeWidth="0.8"
+          strokeDasharray="5 26"
+          animate={reduceMotion ? undefined : { strokeDashoffset: [0, 118] }}
+          transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
+        />
       </motion.svg>
+
+      <motion.div
+        animate={
+          reduceMotion
+            ? undefined
+            : {
+                x: ["-8vw", "7vw", "-8vw"],
+                opacity: [0.18, 0.34, 0.18],
+              }
+        }
+        transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-[28%] top-[58%] h-px w-[34vw] bg-gradient-to-r from-transparent via-cyan-400/25 to-transparent blur-[0.5px]"
+      />
 
       <motion.div
         style={reduceMotion ? undefined : { y: ySecondary, rotate }}

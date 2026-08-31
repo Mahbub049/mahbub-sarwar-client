@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import { motion } from "motion/react";
 import {
   ArrowUpRight,
-  CheckCircle2,
+  ChevronDown,
   LoaderCircle,
   Mail,
   MapPin,
@@ -13,9 +13,8 @@ import {
   Send,
 } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { toast } from "sonner";
 import { site } from "@/lib/site-data";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://mahbub-sarwar-server.onrender.com";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -31,17 +30,34 @@ export function Contact() {
     setStatus("sending");
 
     try {
-      const response = await fetch(`${API_URL}/api/contact`, {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      if (!response.ok) throw new Error("Contact request failed");
+      const data = (await response.json().catch(() => ({}))) as { message?: string };
+      if (!response.ok) throw new Error(data.message || "Contact request failed");
+
       form.reset();
       setStatus("success");
-    } catch {
+      toast.success("Message sent successfully", {
+        description: "Thanks for reaching out. I’ll get back to you as soon as possible.",
+        position: "top-right",
+        duration: 5000,
+      });
+      window.setTimeout(() => setStatus("idle"), 700);
+    } catch (error) {
       setStatus("error");
+      toast.error("Message could not be sent", {
+        description:
+          error instanceof Error
+            ? error.message
+            : `Please try again, or email me directly at ${site.email}.`,
+        position: "top-right",
+        duration: 6000,
+      });
+      window.setTimeout(() => setStatus("idle"), 700);
     }
   }
 
@@ -108,6 +124,29 @@ export function Contact() {
                     <input name="email" type="email" required autoComplete="email" placeholder="you@example.com" className={`${inputClass} mt-2`} />
                   </label>
                 </div>
+
+                <label className="block text-xs font-bold text-[var(--muted)]">
+                  Reason for contact
+                  <span className="relative mt-2 block">
+                    <select
+                      name="reason"
+                      required
+                      defaultValue=""
+                      className={`${inputClass} appearance-none pr-11`}
+                    >
+                      <option value="" disabled>Select a reason</option>
+                      <option value="Research collaboration">Research collaboration</option>
+                      <option value="Project development">Developing a project</option>
+                      <option value="Suggestions or ideas">Suggestions or ideas</option>
+                      <option value="Miscellaneous">Miscellaneous</option>
+                    </select>
+                    <ChevronDown
+                      size={16}
+                      className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[var(--muted)]"
+                    />
+                  </span>
+                </label>
+
                 <label className="block text-xs font-bold text-[var(--muted)]">
                   Subject
                   <input name="subject" required placeholder="What would you like to discuss?" className={`${inputClass} mt-2`} />
@@ -115,6 +154,11 @@ export function Contact() {
                 <label className="block text-xs font-bold text-[var(--muted)]">
                   Message
                   <textarea name="message" required rows={5} placeholder="Write your message..." className={`${inputClass} mt-2 resize-none`} />
+                </label>
+
+                <label className="sr-only" aria-hidden="true">
+                  Website
+                  <input name="website" tabIndex={-1} autoComplete="off" />
                 </label>
 
                 <motion.button
@@ -128,16 +172,6 @@ export function Contact() {
                   {status === "sending" ? "Sending..." : "Send message"}
                 </motion.button>
 
-                {status === "success" ? (
-                  <p className="flex items-center gap-2 rounded-xl border border-emerald-500/20 bg-emerald-500/8 px-4 py-3 text-xs font-bold text-emerald-500">
-                    <CheckCircle2 size={15} /> Message sent successfully.
-                  </p>
-                ) : null}
-                {status === "error" ? (
-                  <p className="rounded-xl border border-rose-500/20 bg-rose-500/8 px-4 py-3 text-xs font-bold text-rose-500">
-                    Could not send the message. You can still email me directly at {site.email}.
-                  </p>
-                ) : null}
               </form>
             </div>
           </div>
