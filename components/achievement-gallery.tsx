@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
-import { ChevronLeft, ChevronRight, Images, X } from "lucide-react";
+import { AlertTriangle, ChevronLeft, ChevronRight, Images, X } from "lucide-react";
 
 type GalleryPhoto = {
   src: string;
@@ -29,25 +29,46 @@ export function AchievementGalleryModal({
 }: AchievementGalleryModalProps) {
   const [mounted, setMounted] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [failedSources, setFailedSources] = useState<Set<string>>(() => new Set());
+
+  const galleryKey = useMemo(
+    () => `${title}::${photos.map((photo) => photo.src).join("|")}`,
+    [photos, title],
+  );
+
+  const photoCount = photos.length;
+  const safeActiveIndex =
+    photoCount > 0 ? Math.min(Math.max(activeIndex, 0), photoCount - 1) : 0;
+  const activePhoto = photos[safeActiveIndex] ?? null;
+  const hasMultiple = photoCount > 1;
+  const activePhotoFailed = activePhoto ? failedSources.has(activePhoto.src) : false;
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  // Reset gallery-local state whenever a different gallery is opened.
+  // The clamped index above also protects the very first render before this
+  // effect runs (for example: close photo 2/2, then open a 1-photo gallery).
+  useEffect(() => {
+    if (!open) return;
+    setActiveIndex(0);
+    setFailedSources(new Set());
+  }, [galleryKey, open]);
+
   useEffect(() => {
     if (!open) return;
 
-    setActiveIndex(0);
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
-      if (photos.length > 1 && event.key === "ArrowLeft") {
-        setActiveIndex((current) => (current - 1 + photos.length) % photos.length);
+      if (photoCount > 1 && event.key === "ArrowLeft") {
+        setActiveIndex((current) => (current - 1 + photoCount) % photoCount);
       }
-      if (photos.length > 1 && event.key === "ArrowRight") {
-        setActiveIndex((current) => (current + 1) % photos.length);
+      if (photoCount > 1 && event.key === "ArrowRight") {
+        setActiveIndex((current) => (current + 1) % photoCount);
       }
     };
 
@@ -56,19 +77,27 @@ export function AchievementGalleryModal({
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [open, onClose, photos.length]);
+  }, [open, onClose, photoCount]);
 
-  if (!mounted || !open || photos.length === 0) return null;
-
-  const activePhoto = photos[activeIndex];
-  const hasMultiple = photos.length > 1;
+  if (!mounted || !open || photoCount === 0) return null;
 
   const goPrevious = () => {
-    setActiveIndex((current) => (current - 1 + photos.length) % photos.length);
+    if (photoCount < 2) return;
+    setActiveIndex((current) => (current - 1 + photoCount) % photoCount);
   };
 
   const goNext = () => {
-    setActiveIndex((current) => (current + 1) % photos.length);
+    if (photoCount < 2) return;
+    setActiveIndex((current) => (current + 1) % photoCount);
+  };
+
+  const markPhotoFailed = (src: string) => {
+    setFailedSources((current) => {
+      if (current.has(src)) return current;
+      const next = new Set(current);
+      next.add(src);
+      return next;
+    });
   };
 
   return createPortal(
@@ -96,7 +125,7 @@ export function AchievementGalleryModal({
 
           <div className="flex shrink-0 items-center gap-2">
             <span className="hidden rounded-full border hairline bg-[var(--surface)] px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.12em] text-[var(--muted)] sm:inline-flex">
-              {activeIndex + 1} / {photos.length}
+              {safeActiveIndex + 1} / {photoCount}
             </span>
             <button
               type="button"
@@ -111,15 +140,29 @@ export function AchievementGalleryModal({
 
         <div className="min-h-0 flex-1 overflow-y-auto p-3 sm:p-5">
           <div className="relative h-[56vh] min-h-[340px] overflow-hidden rounded-[1.35rem] border border-white/10 bg-black/90 sm:h-[64vh] sm:min-h-[430px]">
-            <Image
-              key={activePhoto.src}
-              src={activePhoto.src}
-              alt={activePhoto.alt}
-              fill
-              priority
-              sizes="(max-width: 1200px) 95vw, 1080px"
-              className="object-contain p-2 sm:p-4"
-            />
+            {activePhoto && !activePhotoFailed ? (
+              <Image
+                key={`${galleryKey}:${activePhoto.src}`}
+                src={activePhoto.src}
+                alt={activePhoto.alt}
+                fill
+                priority
+                unoptimized
+                sizes="(max-width: 1200px) 95vw, 1080px"
+                className="object-contain p-2 sm:p-4"
+                onError={() => markPhotoFailed(activePhoto.src)}
+              />
+            ) : (
+              <div className="absolute inset-0 grid place-items-center p-8 text-center text-white/75">
+                <div className="max-w-sm">
+                  <AlertTriangle className="mx-auto text-[var(--accent)]" size={30} />
+                  <p className="mt-3 text-sm font-semibold text-white">Photo could not be loaded</p>
+                  <p className="mt-1 text-xs leading-5 text-white/50">
+                    The gallery stayed open safely. Close it and try again after confirming the image file is deployed.
+                  </p>
+                </div>
+              </div>
+            )}
 
             {hasMultiple ? (
               <>
@@ -143,34 +186,46 @@ export function AchievementGalleryModal({
             ) : null}
 
             <span className="absolute bottom-3 right-3 rounded-full border border-white/15 bg-black/55 px-3 py-1.5 text-[10px] font-bold text-white/85 backdrop-blur sm:hidden">
-              {activeIndex + 1} / {photos.length}
+              {safeActiveIndex + 1} / {photoCount}
             </span>
           </div>
 
           {hasMultiple ? (
             <div className="mt-3 flex gap-2 overflow-x-auto pb-1 sm:mt-4 sm:justify-center">
-              {photos.map((photo, index) => (
-                <button
-                  key={photo.src}
-                  type="button"
-                  onClick={() => setActiveIndex(index)}
-                  className={`focus-ring relative h-16 w-24 shrink-0 overflow-hidden rounded-xl border-2 transition sm:h-20 sm:w-28 ${
-                    index === activeIndex
-                      ? "border-[var(--accent)] ring-2 ring-[var(--accent)] ring-offset-2 ring-offset-[var(--surface-strong)]"
-                      : "border-transparent opacity-65 hover:opacity-100"
-                  }`}
-                  aria-label={`View photo ${index + 1}`}
-                  aria-current={index === activeIndex ? "true" : undefined}
-                >
-                  <Image
-                    src={photo.src}
-                    alt=""
-                    fill
-                    sizes="112px"
-                    className="object-cover"
-                  />
-                </button>
-              ))}
+              {photos.map((photo, index) => {
+                const failed = failedSources.has(photo.src);
+
+                return (
+                  <button
+                    key={photo.src}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    className={`focus-ring relative h-16 w-24 shrink-0 overflow-hidden rounded-xl border-2 transition sm:h-20 sm:w-28 ${
+                      index === safeActiveIndex
+                        ? "border-[var(--accent)] ring-2 ring-[var(--accent)] ring-offset-2 ring-offset-[var(--surface-strong)]"
+                        : "border-transparent opacity-65 hover:opacity-100"
+                    }`}
+                    aria-label={`View photo ${index + 1}`}
+                    aria-current={index === safeActiveIndex ? "true" : undefined}
+                  >
+                    {!failed ? (
+                      <Image
+                        src={photo.src}
+                        alt=""
+                        fill
+                        unoptimized
+                        sizes="112px"
+                        className="object-cover"
+                        onError={() => markPhotoFailed(photo.src)}
+                      />
+                    ) : (
+                      <span className="absolute inset-0 grid place-items-center bg-black/80 text-white/60">
+                        <AlertTriangle size={15} />
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           ) : null}
         </div>
