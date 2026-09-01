@@ -10,7 +10,7 @@ export function Publications() {
         <Reveal>
           <SectionHeading
             eyebrow="Research"
-            number="04"
+            number="03"
             title="Research & Publications"
             copy="Selected work in explainable AI, biomedical imaging, and natural language processing."
             action={
@@ -28,10 +28,10 @@ export function Publications() {
         <div className="space-y-4">
           {publications.map((publication, index) => (
             <Reveal key={publication.title} delay={index * 0.07}>
-              <article className="group relative overflow-hidden rounded-[1.65rem] border hairline bg-[var(--surface)] p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:bg-[var(--surface-strong)] sm:p-8 lg:px-10 lg:py-9">
+              <article className="group relative overflow-hidden rounded-[1.45rem] border hairline bg-[var(--surface)] p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:bg-[var(--surface-strong)] sm:rounded-[1.65rem] sm:p-8 lg:px-10 lg:py-9">
                 <div className="pointer-events-none absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-cyan-400/55 to-transparent opacity-0 transition group-hover:opacity-100" />
                 <div className="grid gap-5 sm:grid-cols-[52px_minmax(0,1fr)_auto] sm:items-start">
-                  <span className="grid h-12 w-12 place-items-center rounded-2xl border hairline bg-[var(--surface-strong)] text-[var(--accent)]">
+                  <span className="hidden h-12 w-12 place-items-center rounded-2xl border hairline bg-[var(--surface-strong)] text-[var(--accent)] sm:grid">
                     <FileText size={19} />
                   </span>
 
@@ -43,7 +43,7 @@ export function Publications() {
                       <span>·</span>
                       <span>{publication.area}</span>
                     </div>
-                    <h3 className="mt-3 max-w-5xl font-display text-xl font-semibold leading-[1.32] tracking-[-0.025em] sm:text-2xl lg:text-[1.7rem]">
+                    <h3 className="mt-3 max-w-5xl font-display text-lg font-semibold leading-[1.35] tracking-[-0.025em] sm:text-2xl lg:text-[1.7rem]">
                       {publication.title}
                     </h3>
                     <div className="mt-5 border-t hairline pt-4">

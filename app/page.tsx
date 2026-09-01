@@ -1,14 +1,14 @@
 import { Navbar } from "@/components/navbar";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { Hero } from "@/components/hero";
-import { Education } from "@/components/education";
 import { Experience } from "@/components/experience";
-import { Teaching } from "@/components/teaching";
-import { Activities } from "@/components/activities";
-import { Skills } from "@/components/skills";
-import { Projects } from "@/components/projects";
-import { Achievements } from "@/components/achievements";
+import { Education } from "@/components/education";
 import { Publications } from "@/components/publications";
+import { Teaching } from "@/components/teaching";
+import { Projects } from "@/components/projects";
+import { Skills } from "@/components/skills";
+import { Activities } from "@/components/activities";
+import { Achievements } from "@/components/achievements";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { BackgroundMotion } from "@/components/background-motion";
@@ -20,13 +20,13 @@ export default function Home() {
       <ScrollProgress />
       <Navbar />
       <Hero />
-      <Education />
       <Experience />
-      <Teaching />
-      <Activities />
-      <Skills />
+      <Education />
       <Publications />
+      <Teaching />
       <Projects />
+      <Skills />
+      <Activities />
       <Achievements />
       <Contact />
       <Footer />

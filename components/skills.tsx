@@ -76,9 +76,11 @@ export function Skills() {
       <div className="site-shell">
         <Reveal>
           <div className="mb-10 border-b hairline pb-7 md:mb-12">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[var(--accent)]">
-              Skills
-            </p>
+            <div className="flex items-center gap-3 text-[10px] font-extrabold uppercase tracking-[0.2em] text-[var(--muted)]">
+              <span className="font-display text-[var(--accent)]">06</span>
+              <span className="h-px w-7 bg-[var(--line)]" />
+              <span>Skills</span>
+            </div>
             <h2 className="mt-4 font-display text-4xl font-semibold tracking-[-0.025em] sm:text-5xl">
               Skills & Technologies
             </h2>

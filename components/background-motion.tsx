@@ -38,7 +38,7 @@ export function BackgroundMotion() {
               }
         }
         transition={{ duration: 38, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -right-[20vw] top-[38vh] h-[46rem] w-[68vw] rounded-[50%] bg-violet-500/[0.055] blur-[130px] dark:bg-violet-500/[0.045]"
+        className="absolute -right-[20vw] top-[38vh] hidden h-[46rem] w-[68vw] rounded-[50%] bg-violet-500/[0.055] blur-[130px] dark:bg-violet-500/[0.045] sm:block"
       />
 
       <motion.div
@@ -52,7 +52,7 @@ export function BackgroundMotion() {
               }
         }
         transition={{ duration: 46, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-[42%] top-[18%] h-48 w-48 rounded-full bg-blue-400/[0.055] blur-[90px] dark:bg-blue-400/[0.045]"
+        className="absolute left-[42%] top-[18%] hidden h-48 w-48 rounded-full bg-blue-400/[0.055] blur-[90px] dark:bg-blue-400/[0.045] sm:block"
       />
 
       <motion.svg
@@ -122,7 +122,7 @@ export function BackgroundMotion() {
 
       <motion.div
         style={reduceMotion ? undefined : { y: ySecondary, rotate }}
-        className="absolute left-1/2 top-1/2 h-[90vh] w-px origin-center bg-gradient-to-b from-transparent via-blue-400/15 to-transparent"
+        className="absolute left-1/2 top-1/2 hidden h-[90vh] w-px origin-center bg-gradient-to-b from-transparent via-blue-400/15 to-transparent sm:block"
       />
     </div>
   );

@@ -280,3 +280,24 @@ a {
 [data-sonner-toast].portfolio-toast [data-description] {
   color: var(--muted) !important;
 }
+
+/* Mobile-specific polish: avoid fixed-background repaint jank around the animated
+   portrait, keep section rhythm compact, and support horizontal role switchers. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .portfolio-canvas {
+    background-attachment: scroll, scroll, scroll, scroll;
+  }
+
+  .section-pad {
+    padding-block: 4.5rem;
+  }
+}

@@ -28,7 +28,7 @@ export function Footer() {
   return (
     <footer className="border-t hairline pb-8 pt-4">
       <div className="site-shell">
-        <div className="flex flex-col gap-6 rounded-[1.5rem] px-1 py-8 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col items-center gap-6 rounded-[1.5rem] px-1 py-8 text-center sm:flex-row sm:items-end sm:justify-between sm:text-left">
           <div>
             <p className="font-display text-2xl font-semibold tracking-[-0.04em]">
               {site.shortName}<span className="text-[var(--accent)]">.</span>
@@ -36,7 +36,7 @@ export function Footer() {
             <p className="mt-2 max-w-md text-sm leading-6 text-[var(--muted)]">
               Lecturer · Researcher · Software Engineer working across computing education, software systems, and AI research.
             </p>
-            <div className="mt-5 flex flex-wrap items-center gap-3">
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-3 sm:justify-start">
               <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
                 © 2026 {site.shortName}. All rights reserved.
               </p>

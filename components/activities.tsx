@@ -142,12 +142,12 @@ export function Activities() {
   );
 
   return (
-    <section className="section-pad relative overflow-hidden border-t hairline">
+    <section id="leadership" className="section-pad relative overflow-hidden border-t hairline">
       <div className="site-shell relative z-10">
         <Reveal>
           <div className="mb-10 border-b hairline pb-7 md:mb-12">
             <div className="mb-4 flex items-center gap-3 text-[10px] font-extrabold uppercase tracking-[0.2em] text-[var(--muted)]">
-              <Radio size={14} className="text-[var(--accent)]" /> Leadership
+              <span className="font-display text-[var(--accent)]">07</span><span className="h-px w-7 bg-[var(--line)]" /><Radio size={14} className="text-[var(--accent)]" /> Leadership
             </div>
             <h2 className="font-display text-4xl font-semibold tracking-[-0.025em] sm:text-5xl">
               Leadership & Activities

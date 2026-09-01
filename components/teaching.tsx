@@ -38,7 +38,7 @@ export function Teaching() {
         <Reveal>
           <SectionHeading
             eyebrow="Teaching"
-            number="03"
+            number="04"
             title="Teaching Experience"
             copy="Undergraduate instruction across programming, systems, databases, and communication engineering."
             action={

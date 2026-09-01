@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { BriefcaseBusiness, Check, Clock3 } from "lucide-react";
 import { experience } from "@/lib/site-data";
@@ -10,17 +10,94 @@ export function Experience() {
   const [active, setActive] = useState(0);
   const item = experience[active];
 
+  function selectMobileRole(index: number, event: MouseEvent<HTMLButtonElement>) {
+    setActive(index);
+    event.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }
+
   return (
     <section id="experience" className="section-pad relative border-t hairline">
       <div className="site-shell">
         <SectionHeading
           eyebrow="Experience"
-          number="02"
+          number="01"
           title="Professional Experience"
           copy="University teaching, academic support, and full-stack software development."
         />
 
-        <div className="grid gap-5 lg:grid-cols-[0.56fr_1.44fr]">
+        <div className="lg:hidden">
+          <div className="sticky top-[4.6rem] z-20 -mx-1 mb-4 rounded-[1.2rem] border hairline bg-[var(--surface-strong)] p-2 shadow-[0_14px_38px_rgba(0,0,0,.12)] backdrop-blur-2xl">
+            <div className="no-scrollbar flex gap-2 overflow-x-auto overscroll-x-contain">
+              {experience.map((entry, index) => {
+                const selected = active === index;
+                return (
+                  <button
+                    type="button"
+                    key={`mobile-${entry.role}-${entry.organization}`}
+                    onClick={(event) => selectMobileRole(index, event)}
+                    className={`focus-ring min-w-[10.75rem] rounded-[0.95rem] border px-3 py-2.5 text-left transition ${
+                      selected
+                        ? "border-[color-mix(in_srgb,var(--accent)_34%,var(--line))] bg-[color-mix(in_srgb,var(--accent)_10%,var(--surface))] shadow-sm"
+                        : "hairline bg-[var(--bg)]"
+                    }`}
+                    aria-pressed={selected}
+                  >
+                    <span className="flex items-center gap-2">
+                      <span className={`h-2 w-2 shrink-0 rounded-full ${selected ? "bg-[var(--accent)] shadow-[0_0_0_4px_rgba(61,160,255,.12)]" : "bg-slate-400/40"}`} />
+                      <span className="truncate font-display text-xs font-semibold">{entry.role}</span>
+                    </span>
+                    <span className="mt-1.5 block truncate text-[9px] font-semibold text-[var(--muted)]">{entry.organization}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-[1.55rem] border border-white/10 bg-[#070b16] p-5 text-white shadow-[0_24px_70px_rgba(0,0,0,.2)]">
+            <div className="topography pointer-events-none absolute inset-0 opacity-20" />
+            <div className="spectral-beam pointer-events-none absolute -right-24 top-16 h-16 w-[82%] -rotate-12 opacity-45" />
+
+            <AnimatePresence mode="wait">
+              <motion.article
+                key={`mobile-detail-${item.role}-${item.organization}`}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.25 }}
+                className="relative z-10"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1.5 text-[9px] font-extrabold uppercase tracking-[0.14em] text-cyan-200">
+                    <BriefcaseBusiness size={12} /> {item.status}
+                  </span>
+                  <span className="text-[10px] font-bold text-slate-400">{item.period}</span>
+                </div>
+
+                <h3 className="mt-4 font-display text-2xl font-semibold tracking-[-0.04em]">{item.role}</h3>
+                <p className="mt-1.5 font-display text-sm font-medium text-cyan-300">{item.organization}</p>
+
+                <div className="mt-4 inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.045] px-3 py-2">
+                  <Clock3 size={13} className="text-cyan-300" />
+                  <span className="font-display text-base font-semibold">{item.duration}</span>
+                  <span className="text-[8px] font-extrabold uppercase tracking-[0.14em] text-slate-500">tenure</span>
+                </div>
+
+                <p className="mt-5 text-justify text-sm leading-6 text-slate-300">{item.summary}</p>
+
+                <div className="mt-5 space-y-2.5 border-t border-white/10 pt-4">
+                  {item.highlights.map((highlight) => (
+                    <div key={highlight} className="flex gap-2.5">
+                      <Check size={14} className="mt-1 shrink-0 text-cyan-300" />
+                      <p className="min-w-0 flex-1 text-justify text-xs leading-5 text-slate-300">{highlight}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.article>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        <div className="hidden gap-5 lg:grid lg:grid-cols-[0.56fr_1.44fr]">
           <div className="self-start rounded-[1.5rem] border hairline bg-[var(--surface)] p-3 backdrop-blur-xl">
             {experience.map((entry, index) => {
               const selected = active === index;

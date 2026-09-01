@@ -40,7 +40,7 @@ export function Achievements() {
         <Reveal>
           <SectionHeading
             eyebrow="Recognition"
-            number="06"
+            number="08"
             title="Awards & Achievements"
             copy="Academic honors, university recognition, and competitive distinctions."
           />
